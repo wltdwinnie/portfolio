@@ -130,4 +130,177 @@ export const siteConfig = {
       proficiency: "Advanced professional proficiency across all skills"
     },
   ],
+
+  projects: [
+    {
+      title: "AutoGreen.sg",
+      description: "A comprehensive sustainability platform for Singapore's Green Plan 2030. Chrome extension with intelligent product scanning and Next.js web application for eco-friendly shopping on Lazada and FoodPanda.",
+      tags: ["Next.js", "React", "TypeScript", "Chrome Extension", "PostgreSQL", "Tailwind CSS"],
+      type: "Team Project",
+      year: "2024",
+      category: "Web Development",
+      status: "Completed",
+      teamSize: "5 members",
+      achievements: [
+        "Top 10 teams in Ellipsis Tech Series Hackathon",
+        "Smart product detection with 95% accuracy",
+        "Chrome extension with 1000+ scanned products",
+        "Real-time environmental impact tracking"
+      ],
+      technologies: ["Next.js 15.5.2", "React 19", "TypeScript", "Tailwind CSS v4", "Chrome Extension API", "Neon Database", "PostgreSQL"],
+      highlights: [
+        "Built for Singapore's Green Plan 2030",
+        "Supports Lazada and FoodPanda platforms",
+        "Interactive dashboard with leaderboards",
+        "Automated eco-product detection"
+      ],
+      links: {
+        live: "https://autogreen-sg.vercel.app/",
+        github: "https://github.com/Onyxxx17/AutoGreen.sg",
+        demo: "https://autogreen-sg.vercel.app/"
+      },
+      collaborators: ["Aung Ye Thant Hein", "Chue Myat Sandy", "Htet Shwe Win Than", "Wunna Aung"]
+    },
+    {
+      title: "RentLah!",
+      description: "A comprehensive student housing platform for Singapore universities. Features verified listings, campus proximity search, budget filters, and integrated chat system for students to find safe accommodations.",
+      tags: ["Next.js", "Node.js", "PostgreSQL", "Google Maps API", "Socket.io", "Drizzle ORM"],
+      type: "Team Project", 
+      year: "2024",
+      category: "Web Development",
+      status: "Completed",
+      teamSize: "5 members",
+      achievements: [
+        "Verified listings system for safety",
+        "Google Maps integration for location search",
+        "Real-time chat with Socket.io",
+        "Student-focused budget filtering"
+      ],
+      technologies: ["Next.js", "Node.js", "PostgreSQL", "Drizzle ORM", "Better Auth", "Socket.io", "Google Maps API", "Tailwind CSS", "shadcn/ui"],
+      highlights: [
+        "University-focused accommodation search",
+        "Verified listings for student safety",
+        "Campus proximity calculations",
+        "Modern responsive UI design"
+      ],
+      links: {
+        github: "https://github.com/wltdwinnie/RentLah-HEAP"
+      },
+      collaborators: ["Aung Ye Thant Hein", "Chue Myat Sandy", "Htet Shwe Win Than", "Lin Khant Pe Thein"]
+    },
+    {
+      title: "Personal Portfolio Website",
+      description: "A modern, responsive portfolio website built with Next.js 15 and TypeScript. Features clean lavender theme, multi-page navigation, contact forms, and comprehensive showcase of my projects and experience.",
+      tags: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "Responsive Design"],
+      type: "Personal Project",
+      year: "2024", 
+      category: "Web Development",
+      status: "Ongoing",
+      achievements: [
+        "Clean, minimal lavender design theme",
+        "Multi-page navigation with persistent header",
+        "Responsive design for all devices",
+        "Integrated contact form functionality"
+      ],
+      technologies: ["Next.js 15", "TypeScript", "Tailwind CSS v3", "shadcn/ui", "Lucide React", "next-themes"],
+      highlights: [
+        "Modern App Router architecture",
+        "Dark/light mode support",
+        "Performance optimized",
+        "Accessible design (WCAG compliant)"
+      ],
+      links: {
+        live: "https://winleithawdar.vercel.app",
+        github: "https://github.com/wltdwinnie/portfolio"
+      }
+    },
+    
+    {
+      title: "Pokémon Egg Hatcher Game",
+      description: "Interactive Java application featuring object-oriented design, user interface components, and game logic implementation. Built with modular architecture and comprehensive user feedback systems.",
+      tags: ["Java", "OOP", "Game Development", "UI Design"],
+      grade: "97%",
+      type: "Academic Project",
+      year: "2023",
+      category: "Software Development",
+      achievements: [
+        "Object-Oriented Programming principles",
+        "Interactive user interface design", 
+        "Game state management",
+        "Modular code architecture"
+      ],
+      technologies: ["Java", "Swing", "OOP Design Patterns"],
+      highlights: [
+        "Comprehensive game logic implementation",
+        "User-friendly interface design",
+        "Modular and maintainable code structure",
+        "Achievement of 97% grade"
+      ]
+    },
+    {
+      title: "Photoshop Essentials Workshop Leadership",
+      description: "Successfully planned and executed a comprehensive 2-day online workshop teaching Adobe Photoshop fundamentals to over 100 participants from diverse backgrounds.",
+      tags: ["Workshop", "Leadership", "Design", "Education"],
+      type: "Leadership Project",
+      year: "2023",
+      category: "Community Education",
+      achievements: [
+        "100+ participants across 2 days",
+        "Hands-on learning curriculum",
+        "Live demonstration sessions",
+        "Resource material development"
+      ],
+      impact: "Improved digital literacy for 100+ community members",
+      technologies: ["Adobe Photoshop", "Online Teaching Platforms"],
+      highlights: [
+        "Large-scale workshop coordination",
+        "Educational curriculum development",
+        "Community impact and engagement",
+        "Skill development for participants"
+      ]
+    },
+    {
+      title: "Professional Graphic Design Portfolio",
+      description: "Comprehensive collection of digital artwork, social media graphics, and brand identity materials created for various organizations and personal projects.",
+      tags: ["Photoshop", "Design", "Branding", "Visual Arts"],
+      type: "Creative Project",
+      year: "2023",
+      category: "Visual Design",
+      achievements: [
+        "50+ original digital artworks",
+        "Brand identity development",
+        "Social media content creation",
+        "Print and digital media design"
+      ],
+      technologies: ["Adobe Photoshop", "Adobe Illustrator", "Design Principles"],
+      highlights: [
+        "Diverse portfolio of design work",
+        "Brand identity projects",
+        "Social media graphics",
+        "Professional design principles"
+      ]
+    },
+    {
+      title: "Ozone Layer Deterioration Research",
+      description: "In-depth scientific research project investigating continued ozone layer deterioration despite international CFC ban implementations, featuring original analysis and hand-drawn molecular energy diagrams.",
+      tags: ["Research", "Chemistry", "Environmental Science", "Analysis"],
+      grade: "94%", 
+      type: "Academic Project",
+      year: "2023",
+      category: "Scientific Research",
+      achievements: [
+        "Original scientific research",
+        "Statistical data analysis",
+        "Hand-drawn energy diagrams",
+        "Environmental impact assessment"
+      ],
+      technologies: ["Scientific Research Methods", "Data Analysis", "Academic Writing"],
+      highlights: [
+        "Independent research project",
+        "Environmental science focus",
+        "High academic achievement",
+        "Original analysis and findings"
+      ]
+    }
+  ]
 };
