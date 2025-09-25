@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
-import { Heart, Github, Linkedin, Mail, ExternalLink, Instagram } from "lucide-react";
+import { Github, Linkedin, Mail, ExternalLink, Instagram } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
