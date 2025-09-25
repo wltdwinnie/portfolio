@@ -1,8 +1,10 @@
+import { Contact } from "@/components/contact";
+
+export const metadata = {
+  title: "Contact - Win Lei Thawdar",
+  description: "Get in touch for collaborations, opportunities, or just to say hello. Always excited to connect with fellow developers and innovators."
+};
+
 export default function ContactPage() {
-  return (
-    <div className="container mx-auto px-4 py-16">
-      <h1 className="text-4xl font-bold text-center">Contact</h1>
-      <p className="text-center text-muted-foreground mt-4">Coming soon...</p>
-    </div>
-  );
+  return <Contact />;
 }
