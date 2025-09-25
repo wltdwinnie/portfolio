@@ -1,40 +1,42 @@
+import Link from "next/link";
 import { siteConfig } from "@/lib/config";
-import { Github, Linkedin, Mail, ExternalLink, Instagram } from "lucide-react";
+import { Heart, Github, Linkedin, Mail, ExternalLink, Instagram } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="border-t bg-muted/30 mt-16">
-      <div className="container mx-auto px-4 py-8">
-        <div className="grid gap-6 md:grid-cols-3">
+    <footer className="border-t bg-muted/20 mt-auto">
+      <div className="container mx-auto px-6 py-12">
+        <div className="grid gap-8 md:grid-cols-12">
           {/* Personal Info */}
-          <div className="space-y-3">
-            <h3 className="font-semibold text-lg">{siteConfig.name}</h3>
-            <p className="text-sm text-muted-foreground">
-              {siteConfig.role} at {siteConfig.university}
+          <div className="md:col-span-5 space-y-4">
+            <h3 className="font-bold text-xl">{siteConfig.name}</h3>
+            <p className="text-muted-foreground max-w-md">
+              {siteConfig.role} at {siteConfig.university}. Passionate about coding, creativity, and making positive impact through technology.
             </p>
-            <p className="text-xs text-muted-foreground">
-              {siteConfig.location}
-            </p>
+            <div className="text-sm text-muted-foreground">
+              <p> {siteConfig.location}</p>
+              <p> {siteConfig.email}</p>
+            </div>
           </div>
           
           {/* Quick Links */}
-          <div className="space-y-3">
-            <h4 className="font-medium">Quick Links</h4>
-            <div className="flex flex-col space-y-2 text-sm">
-              <a href="/about" className="text-muted-foreground hover:text-primary transition-colors">
+          <div className="md:col-span-3 space-y-4">
+            <h4 className="font-semibold">Quick Links</h4>
+            <div className="flex flex-col space-y-3 text-sm">
+              <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
+                Home
+              </Link>
+              <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">
                 About Me
-              </a>
-              <a href="/projects" className="text-muted-foreground hover:text-primary transition-colors">
+              </Link>
+              <Link href="/projects" className="text-muted-foreground hover:text-primary transition-colors">
                 My Projects
-              </a>
-              <a href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
+              </Link>
+              <Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
                 Get In Touch
-              </a>
-              <a href={`mailto:${siteConfig.email}`} className="text-muted-foreground hover:text-primary transition-colors">
-                Email Me
-              </a>
+              </Link>
             </div>
           </div>
           
@@ -58,8 +60,7 @@ export function Footer() {
                   href={siteConfig.links.linkedin} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                  aria-label="LinkedIn"
+                  className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group"
                 >
                   <Linkedin className="h-5 w-5" />
                 </a>
