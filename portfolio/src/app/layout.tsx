@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import { Header } from "@/components/header";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -17,15 +18,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} antialiased min-h-screen gradient-bg scrollbar-purple`}>
+      <body className={`${inter.className} antialiased min-h-screen bg-background scrollbar-clean`}>
         <ThemeProvider 
           attribute="class" 
           defaultTheme="dark" 
           enableSystem={false}
           themes={['light', 'dark']}
         >
-          <div className="min-h-screen">
-            {children}
+          <div className="min-h-screen flex flex-col">
+            <Header />
+            <main className="flex-1">
+              {children}
+            </main>
           </div>
         </ThemeProvider>
       </body>
