@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { siteConfig } from "@/lib/config";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   MapPin, 
   GraduationCap, 
@@ -19,10 +20,10 @@ import {
 export default function Home() {
   return (
     <div>
-      {/* Hero Section - Clean and Simple */}
+      {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 md:py-24 lg:py-32">
         <div className="grid gap-12 lg:grid-cols-2 items-center">
-          {/* Left side - Text content */}
+          {/* Left side */}
           <div className="space-y-8">
             {/* Status Badges */}
             <div className="flex flex-wrap gap-3">
@@ -82,21 +83,25 @@ export default function Home() {
             
             {/* Download CV */}
             <div className="pt-2">
-              <Button variant="outline" size="sm">
-                <Download className="mr-2 h-4 w-4" />
-                Download CV
+              <Button variant="outline" size="sm" asChild>
+                <a href="/win-lei-thawdar-cv.pdf" target="_blank">
+                  <Download className="mr-2 h-4 w-4" />
+                  Download CV
+                </a>
               </Button>
             </div>
           </div>
           
           {/* Right side - Profile picture */}
           <div className="flex justify-center lg:justify-end">
-            <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl border bg-card p-6 flex items-center justify-center">
-              <Avatar className="w-32 h-32 md:w-40 md:h-40 border-4 border-primary/20">
-                <AvatarFallback className="text-2xl md:text-3xl font-bold bg-primary text-primary-foreground">
-                  {siteConfig.name.split(' ').map(n => n[0]).join('')}
-                </AvatarFallback>
-              </Avatar>
+            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border bg-card">
+              <Image
+                src="/win-lei-profile.jpg"
+                alt={`${siteConfig.name} - Profile Picture`}
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </div>
