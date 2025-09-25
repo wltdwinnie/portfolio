@@ -24,7 +24,16 @@ export const siteConfig = {
       technologies: ["Next.js", "React", "Tailwind CSS", "Git", "Vercel", "Node.js"],
       tools: ["Microsoft Office", "Google Workspace", "Adobe Photoshop", "VS Code", "Figma"],
       soft: ["Leadership", "Project Management", "Communication", "Problem-Solving", "Creativity", "Critical Thinking"]
-    }
+    },
+
+    canDo: [
+      "Build responsive web apps with Next.js, React, TypeScript, Tailwind CSS, and shadcn/ui",
+      "Implement auth flows, protected routes, and form validation",
+      "Design relational schemas and write SQL",
+      "Create REST API routes in Next.js and integrate external APIs",
+      "Deploy to Vercel, manage environment variables, and optimize images/bundle size",
+      "Set up Git workflows (branches, PRs, code reviews) and keep clean commits",
+    ]
   },
 
   education: [
@@ -34,26 +43,59 @@ export const siteConfig = {
       period: "2024 - Present",
       scholarship: "ASEAN Undergraduate Scholarship",
       status: "Current",
-      description: "Pursuing comprehensive Computer Science education with focus on software engineering, algorithms, and system design."
     },
     {
       institution: "Royal Academic Institute",
       degree: "Ontario Secondary School Diploma (OSSD)",
       period: "2023",
       grade: "93% Overall",
-      achievements: ["7A* in Cambridge IGCSE", "Exemplary Effort Award"],
-      description: "Completed high school with exceptional academic performance across multiple subjects."
+      achievements: ["RAI Partial Scholarship", "Exemplary Effort Award"],
     },
     {
       institution: "IIP International School",
       degree: "International General Certificate for Secondary Education (IGCSE)",
       period: "2022",
       grade: "7A*",
-      description: "Completed secondary education with exceptional academic performance across multiple subjects."
     }
   ],
 
   experience: [
+    {
+      role: "Data Quality Assurance Student Assistant",
+      organization: "AI Singapore",
+      period: "2025 - Present",
+      type: "Student Assistant",
+      location: "Singapore",
+      achievements: [],
+      description: "Supported data quality processes and QA workflows for AI Singapore projects."
+    },
+    {
+      role: "Marketing Lead",
+      organization: "SMU AI (SMUAI)",
+      period: "2025 - Present",
+      type: "Student Club Leadership",
+      location: "Singapore",
+      achievements: [],
+      description: "Leading marketing strategy and content for SMUAI initiatives and events."
+    },
+    {
+      role: "Honorary General Secretary",
+      organization: "SMU Myanmar Community",
+      period: "2025 - Present",
+      type: "Student Club Leadership",
+      location: "Singapore",
+      achievements: [],
+      description: "Executive committee responsibilities for community operations and engagement."
+    },
+    {
+      role: "Marketing Executive",
+      organization: "SMU Ellipsis",
+      period: "2025 - Present",
+      type: "Student Club Executive",
+      location: "Singapore",
+      achievements: [],
+      description: "Marketing execution for Ellipsis initiatives and Tech Series activities."
+    },
     {
       role: "Operations Director",
       organization: "The Forward Society",
@@ -100,10 +142,19 @@ export const siteConfig = {
 
   activities: [
     {
+      name: "ASEAN Soft Power Camp",
+      role: "Participant",
+      period: "Jun 2024",
+      location: "University of the Thai Chamber of Commerce (UTCC), Thailand",
+      skills: ["Cross-cultural communication", "Creative storytelling", "Collaboration", "Public speaking"],
+      description:
+        "Participated in a three-day ASEAN soft power camp at UTCC, collaborating with regional peers on cultural diplomacy, creative economy, and nation-branding challenges."
+    },
+    {
       name: "KAI Math Club",
       role: "Active Member",
       period: "Feb - Jun 2023",
-      location: "Royal Academic Institute",
+      location: "Royal Academic Institute, Myanmar",
       skills: ["Critical Thinking", "Mathematical Problem-Solving", "Analytical Reasoning", "Teamwork"],
       description: "Participated in advanced mathematics discussions and problem-solving sessions, developing strong analytical and critical thinking capabilities."
     },
@@ -111,7 +162,7 @@ export const siteConfig = {
       name: "KAI Arts & Crafts Club", 
       role: "Active Member",
       period: "Feb - Jun 2023",
-      location: "Royal Academic Institute", 
+      location: "Royal Academic Institute, Myanmar", 
       skills: ["Creativity", "Portfolio Development", "Art Critique", "Visual Communication"],
       description: "Engaged in various artistic projects and portfolio development, enhancing creative expression and visual communication skills."
     }

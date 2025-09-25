@@ -1,7 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { siteConfig } from "@/lib/config";
 import Link from "next/link";
 import Image from "next/image";
@@ -12,7 +11,6 @@ import {
   Code, 
   BookOpen, 
   Users,
-  Star,
   Download,
   Mail
 } from "lucide-react";
@@ -104,28 +102,6 @@ export default function Home() {
               />
             </div>
           </div>
-        </div>
-      </section>
-      
-      {/* Stats Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-          {[
-            { icon: BookOpen, value: "93%", label: "Academic Performance" },
-            { icon: Star, value: "3x", label: "Volunteer Awards" },
-            { icon: Code, value: "6+", label: "Major Projects" },
-            { icon: Users, value: "100+", label: "Workshop Participants" },
-          ].map((stat, index) => (
-            <Card key={index} className="p-6 text-center hover:shadow-md transition-shadow">
-              <div className="flex justify-center mb-3">
-                <stat.icon className="h-8 w-8 text-primary" />
-              </div>
-              <div className="text-2xl md:text-3xl font-bold text-primary mb-1">
-                {stat.value}
-              </div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
-            </Card>
-          ))}
         </div>
       </section>
       
