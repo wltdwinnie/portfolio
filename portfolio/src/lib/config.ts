@@ -133,173 +133,169 @@ export const siteConfig = {
 
   projects: [
     {
-      title: "AutoGreen.sg",
-      description: "A comprehensive sustainability platform for Singapore's Green Plan 2030. Chrome extension with intelligent product scanning and Next.js web application for eco-friendly shopping on Lazada and FoodPanda.",
-      tags: ["Next.js", "React", "TypeScript", "Chrome Extension", "PostgreSQL", "Tailwind CSS"],
-      type: "Team Project",
-      year: "2024",
-      category: "Web Development",
-      status: "Completed",
-      teamSize: "5 members",
-      achievements: [
-        "Top 10 teams in Ellipsis Tech Series Hackathon",
-        "Smart product detection with 95% accuracy",
-        "Chrome extension with 1000+ scanned products",
-        "Real-time environmental impact tracking"
-      ],
-      technologies: ["Next.js 15.5.2", "React 19", "TypeScript", "Tailwind CSS v4", "Chrome Extension API", "Neon Database", "PostgreSQL"],
-      highlights: [
-        "Built for Singapore's Green Plan 2030",
-        "Supports Lazada and FoodPanda platforms",
-        "Interactive dashboard with leaderboards",
-        "Automated eco-product detection"
-      ],
-      links: {
-        live: "https://autogreen-sg.vercel.app/",
-        github: "https://github.com/Onyxxx17/AutoGreen.sg",
-        demo: "https://autogreen-sg.vercel.app/"
-      },
-      collaborators: ["Aung Ye Thant Hein", "Chue Myat Sandy", "Htet Shwe Win Than", "Wunna Aung"]
-    },
-    {
-      title: "RentLah!",
-      description: "A comprehensive student housing platform for Singapore universities. Features verified listings, campus proximity search, budget filters, and integrated chat system for students to find safe accommodations.",
-      tags: ["Next.js", "Node.js", "PostgreSQL", "Google Maps API", "Socket.io", "Drizzle ORM"],
-      type: "Team Project", 
-      year: "2024",
-      category: "Web Development",
-      status: "Completed",
-      teamSize: "5 members",
-      achievements: [
-        "Verified listings system for safety",
-        "Google Maps integration for location search",
-        "Real-time chat with Socket.io",
-        "Student-focused budget filtering"
-      ],
-      technologies: ["Next.js", "Node.js", "PostgreSQL", "Drizzle ORM", "Better Auth", "Socket.io", "Google Maps API", "Tailwind CSS", "shadcn/ui"],
-      highlights: [
-        "University-focused accommodation search",
-        "Verified listings for student safety",
-        "Campus proximity calculations",
-        "Modern responsive UI design"
-      ],
-      links: {
-        github: "https://github.com/wltdwinnie/RentLah-HEAP"
-      },
-      collaborators: ["Aung Ye Thant Hein", "Chue Myat Sandy", "Htet Shwe Win Than", "Lin Khant Pe Thein"]
-    },
-    {
-      title: "Personal Portfolio Website",
-      description: "A modern, responsive portfolio website built with Next.js 15 and TypeScript. Features clean lavender theme, multi-page navigation, contact forms, and comprehensive showcase of my projects and experience.",
-      tags: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "Responsive Design"],
+      title: "Portfolio Website",
       type: "Personal Project",
-      year: "2024", 
-      category: "Web Development",
-      status: "Ongoing",
-      achievements: [
-        "Clean, minimal lavender design theme",
-        "Multi-page navigation with persistent header",
-        "Responsive design for all devices",
-        "Integrated contact form functionality"
-      ],
-      technologies: ["Next.js 15", "TypeScript", "Tailwind CSS v3", "shadcn/ui", "Lucide React", "next-themes"],
-      highlights: [
-        "Modern App Router architecture",
-        "Dark/light mode support",
-        "Performance optimized",
-        "Accessible design (WCAG compliant)"
-      ],
+      categories: ["Personal", "Tech"],
+      date: "2025-09-20",
+      year: "2025",
+      description: "Modern multi-page portfolio with a clean lavender theme, dark/light modes, and a working contact form.",
+      tags: ["Next.js 15", "TypeScript", "Tailwind CSS", "shadcn/ui"],
       links: {
         live: "https://winleithawdar.vercel.app",
         github: "https://github.com/wltdwinnie/portfolio"
-      }
-    },
-    
-    {
-      title: "Pokémon Egg Hatcher Game",
-      description: "Interactive Java application featuring object-oriented design, user interface components, and game logic implementation. Built with modular architecture and comprehensive user feedback systems.",
-      tags: ["Java", "OOP", "Game Development", "UI Design"],
-      grade: "97%",
-      type: "Academic Project",
-      year: "2023",
-      category: "Software Development",
-      achievements: [
-        "Object-Oriented Programming principles",
-        "Interactive user interface design", 
-        "Game state management",
-        "Modular code architecture"
-      ],
-      technologies: ["Java", "Swing", "OOP Design Patterns"],
+      },
       highlights: [
-        "Comprehensive game logic implementation",
-        "User-friendly interface design",
-        "Modular and maintainable code structure",
-        "Achievement of 97% grade"
+        "Clean lavender theme and responsive layout",
+        "Projects, About, Contact pages with persistent header"
       ]
     },
     {
-      title: "Photoshop Essentials Workshop Leadership",
-      description: "Successfully planned and executed a comprehensive 2-day online workshop teaching Adobe Photoshop fundamentals to over 100 participants from diverse backgrounds.",
-      tags: ["Workshop", "Leadership", "Design", "Education"],
-      type: "Leadership Project",
-      year: "2023",
-      category: "Community Education",
+      title: "AutoGreen.sg",
+      type: "Team Project",
+      categories: ["Team", "Tech"],
+      date: "2025-09-06",
+      year: "2025",
+      description: "Sustainability platform with Chrome extension for eco-product detection and a Next.js dashboard.",
+      tags: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Chrome Extension", "PostgreSQL"],
+      links: {
+        live: "https://autogreen-sg.vercel.app",
+        video: "https://youtu.be/LJVyUBTtiWI?si=Kt1CSlS3ElK2wxFL",
+        github: "https://github.com/Onyxxx17/AutoGreen.sg"
+      },
+      collaborators: ["Aung Ye Thant Hein", "Chue Myat Sandy", "Htet Shwe Win Than", "Win Lei Thawdar", "Wunna Aung"],
       achievements: [
-        "100+ participants across 2 days",
-        "Hands-on learning curriculum",
-        "Live demonstration sessions",
-        "Resource material development"
-      ],
-      impact: "Improved digital literacy for 100+ community members",
-      technologies: ["Adobe Photoshop", "Online Teaching Platforms"],
-      highlights: [
-        "Large-scale workshop coordination",
-        "Educational curriculum development",
-        "Community impact and engagement",
-        "Skill development for participants"
+        "Top 10 teams in Ellipsis Tech Series Hackathon",
+        "Automated eco-product detection on major platforms"
       ]
     },
     {
-      title: "Professional Graphic Design Portfolio",
-      description: "Comprehensive collection of digital artwork, social media graphics, and brand identity materials created for various organizations and personal projects.",
-      tags: ["Photoshop", "Design", "Branding", "Visual Arts"],
-      type: "Creative Project",
-      year: "2023",
-      category: "Visual Design",
-      achievements: [
-        "50+ original digital artworks",
-        "Brand identity development",
-        "Social media content creation",
-        "Print and digital media design"
-      ],
-      technologies: ["Adobe Photoshop", "Adobe Illustrator", "Design Principles"],
+      title: "Ellipsis Tech Series 2025 Website Design",
+      type: "Personal Project",
+      categories: ["Personal", "Creative"],
+      date: "2025-08-15",
+      year: "2025",
+      description: "Individual Figma prototype for the 2025 Tech Series website with clean sections and event flows.",
+      tags: ["Figma", "UI/UX"],
+      links: {
+        figma: "https://www.figma.com/proto/B8xQeuv59qQjf3CX5nNfwm/TechSeries2025?node-id=0-1"
+      },
       highlights: [
-        "Diverse portfolio of design work",
-        "Brand identity projects",
-        "Social media graphics",
-        "Professional design principles"
+        "Clear information hierarchy and visual rhythm",
+        "Mobile-first flows and interaction details"
       ]
     },
     {
-      title: "Ozone Layer Deterioration Research",
-      description: "In-depth scientific research project investigating continued ozone layer deterioration despite international CFC ban implementations, featuring original analysis and hand-drawn molecular energy diagrams.",
-      tags: ["Research", "Chemistry", "Environmental Science", "Analysis"],
-      grade: "94%", 
-      type: "Academic Project",
-      year: "2023",
-      category: "Scientific Research",
-      achievements: [
-        "Original scientific research",
-        "Statistical data analysis",
-        "Hand-drawn energy diagrams",
-        "Environmental impact assessment"
-      ],
-      technologies: ["Scientific Research Methods", "Data Analysis", "Academic Writing"],
+      title: "RentLah!",
+      type: "Team Project",
+      categories: ["Team", "Tech"],
+      date: "2025-07-20",
+      year: "2025",
+      description: "Student housing platform with verified listings, map search, and real-time chat.",
+      tags: ["Next.js", "PostgreSQL", "Drizzle ORM", "Socket.io", "Tailwind CSS", "shadcn/ui"],
+      links: {
+        live: "https://rent-lah-heap.vercel.app",
+        video: "https://youtu.be/d-NnnbK4jHU?si=Dz6zmLtKdbUdXdpK",
+        github: "https://github.com/wltdwinnie/RentLah-HEAP"
+      },
+      collaborators: ["Aung Ye Thant Hein", "Chue Myat Sandy", "Htet Shwe Win Than", "Lin Khant Pe Thein", "Win Lei Thawdar"],
       highlights: [
-        "Independent research project",
-        "Environmental science focus",
-        "High academic achievement",
-        "Original analysis and findings"
+        "Verified listings and campus proximity",
+        "Integrated chat and modern UI"
+      ]
+    },
+    {
+      title: "AfterClass UI Competition",
+      type: "Team Project",
+      categories: ["Team", "Creative"],
+      date: "2025-05-15",
+      year: "2025",
+      description: "Module submission for a UI design competition focusing on clean information presentation and workflows.",
+      tags: ["Figma", "UI/UX"],
+      links: {
+        figma: "https://www.figma.com/proto/rs7VSsfqqxucYFZWeYvjTW/-UI-Cubed--AfterClass-Design-Submission?node-id=3531-3327"
+      },
+      collaborators: ["Htet Shwe Win Than", "Tai Wei Sin", "Win Lei Thawdar"],
+      highlights: [
+        "Polished visual system",
+        "User-centric interaction design"
+      ]
+    },
+    {
+      title: "Parade Card Game",
+      type: "Team Project",
+      categories: ["Team", "Tech"],
+      date: "2025-04-15",
+      year: "2025",
+      description: "Java implementation of the Parade card game with multiple modes and client-server multiplayer.",
+      tags: ["Java", "OOP", "Client-Server", "Console UI"],
+      links: {
+        github: "https://github.com/wltdwinnie/ParadeCardGame"
+      },
+      collaborators: ["Aum Jiwoo", "Brandon Boo", "Chua Qihan", "Darrius Ng", "Rayner Sim", "Win Lei Thawdar"],
+      highlights: [
+        "Human vs Human / AI / Multiplayer modes",
+        "Score tracking, hints, history, undo"
+      ]
+    },
+    {
+      title: "SMU Nest",
+      type: "Team Project",
+      categories: ["Team", "Creative"],
+      date: "2025-03-15",
+      year: "2025",
+      description: "Mobile prototype to help SMU students find safe, affordable housing near campus.",
+      tags: ["Figma", "Prototyping", "UX Research"],
+      links: {
+        figma: "https://www.figma.com/proto/qcTJButXewYbUqDiTp5pwJ/SMU-Nest-Prototype?node-id=11-8"
+      },
+      collaborators: ["Ho Xin Yu", "Htet Shwe Win Than", "Kaitlin Gardner", "Sierra Colvin", "Win Lei Thawdar"],
+      highlights: [
+        "Student-specific filters and travel-time context",
+        "Research-driven empathy and flows"
+      ]
+    },
+    {
+      title: "Business Mastery Workshop",
+      type: "Personal Project",
+      categories: ["Personal", "Leadership"],
+      date: "2023-11-05",
+      year: "2023",
+      description: "3-day virtual workshop on business management, leadership, and HR fundamentals (proposal authored and organized).",
+      tags: ["Leadership", "Workshop", "Operations"],
+      links: {},
+      highlights: [
+        "Program design & operations",
+        "150–200 participants target"
+      ]
+    },
+    {
+      title: "Photoshop Essentials Workshop",
+      type: "Personal Project",
+      categories: ["Personal", "Leadership"],
+      date: "2023-08-20",
+      year: "2023",
+      description: "Two-day beginner-friendly Photoshop workshop (proposal authored) covering core editing and design concepts.",
+      tags: ["Workshop", "Photoshop", "Education"],
+      links: {},
+      highlights: [
+        "80–100 participants target",
+        "Hands-on practical outline"
+      ]
+    },
+    {
+      title: "Graphic Design Portfolio",
+      type: "Personal Project",
+      categories: ["Personal", "Creative"],
+      date: "2024-02-01",
+      year: "2024",
+      description: "A curated collection of brand identities, social media graphics, event materials, and artwork.",
+      tags: ["Photoshop", "Illustrator", "Branding", "Social Media", "Layout"],
+      links: {
+        portfolio: "https://www.canva.com/design/DAGuor6sXg4/u4ZjrrmetCGemY4mpusWUg/view"
+      },
+      highlights: [
+        "Consistent brand systems and visual hierarchy",
+        "Production-ready assets for real initiatives"
       ]
     }
   ]
