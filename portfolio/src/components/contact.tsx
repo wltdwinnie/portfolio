@@ -63,7 +63,7 @@ export function Contact() {
         </div>
         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Get In Touch</h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-          Let's connect! Whether it's about projects, opportunities, collaborations, or just a friendly chat about tech and innovation.
+          Let&apos;s connect! Whether it&apos;s about projects, opportunities, collaborations, or just a friendly chat about tech and innovation.
         </p>
       </div>
 
@@ -111,7 +111,7 @@ export function Contact() {
                   Send a Message
                 </CardTitle>
                 <CardDescription>
-                  Fill out the form below and I'll get back to you within a day!
+                  Fill out the form below and I&apos;ll get back to you within a day!
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -149,7 +149,7 @@ export function Contact() {
                     <Input
                       id="subject"
                       name="subject"
-                      placeholder="What's this about?"
+                      placeholder="What&apos;s this about?"
                       value={formData.subject}
                       onChange={handleChange}
                       required

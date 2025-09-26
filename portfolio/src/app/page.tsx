@@ -38,7 +38,7 @@ export default function Home() {
             {/* Main Heading */}
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
-                Hi, I'm{" "}
+                Hi, I&apos;m{" "}
                 <span className="text-primary">
                   {siteConfig.nickname}
                 </span>

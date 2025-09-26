@@ -41,7 +41,7 @@ export function About() {
       </div>
 
       {/* Main Content */}
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+      <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as typeof activeTab)} className="w-full">
         <TabsList className="grid w-full grid-cols-4 mb-8">
           <TabsTrigger value="education">Education</TabsTrigger>
           <TabsTrigger value="experience">Experience</TabsTrigger>
@@ -329,7 +329,7 @@ export function About() {
             <div className="space-y-4">
               <h3 className="text-xl font-bold">Interested in collaborating?</h3>
               <p className="text-muted-foreground">
-                I'm always excited to work on innovative projects and connect with like-minded individuals.
+                I&apos;m always excited to work on innovative projects and connect with like-minded individuals.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button asChild>

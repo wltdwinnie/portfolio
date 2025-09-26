@@ -161,7 +161,7 @@ export function Projects() {
       </div>
 
       {/* Tabs by Type */}
-      <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as any)} className="w-full">
+      <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as typeof activeTab)} className="w-full">
         <TabsList className="grid w-full grid-cols-3 mb-8">
           <TabsTrigger value="all">All</TabsTrigger>
           <TabsTrigger value="Team Project">Team</TabsTrigger>
