@@ -20,7 +20,6 @@ import {
   Filter,
   ArrowRight,
   Calendar,
-  Star,
 } from "lucide-react";
 
 type ProjectType = "Team Project" | "Personal Project";
@@ -63,14 +62,14 @@ export function Projects() {
 
     return [...siteConfig.projects]
       .filter((project) => {
-        // Normalize categories (support legacy `category` string)
-        const cats: string[] = project.categories ?? (project.category ? [project.category] : []);
+        // Use categories array (no more single category)
+        const cats: string[] = project.categories || [];
 
         const matchesSearch =
           q.length === 0 ||
           project.title.toLowerCase().includes(q) ||
           project.description.toLowerCase().includes(q) ||
-          (project.tags || []).some((tag: string) => tag.toLowerCase().includes(q));
+          project.tags.some((tag: string) => tag.toLowerCase().includes(q));
 
         const matchesType = activeTab === "all" || project.type === activeTab;
 
@@ -183,7 +182,7 @@ export function Projects() {
               {projectsToRender.map((project, i) => {
                 const conf = typeConfig[project.type as keyof typeof typeConfig];
                 const Icon = conf?.icon || Code;
-                const cats: string[] = project.categories ?? (project.category ? [project.category] : []);
+                const cats: string[] = project.categories || [];
 
                 return (
                   <Card
@@ -193,53 +192,42 @@ export function Projects() {
                     } hover:scale-[1.02]`}
                   >
                     <CardHeader className="space-y-4">
-                      <div className="flex items-start justify-between">
-                        <div className="flex items-start gap-4">
-                          <div
-                            className={`p-3 rounded-xl ${
-                              conf?.bgColor || "bg-muted"
-                            } group-hover:scale-110 transition-transform duration-300`}
-                          >
-                            <Icon className={`h-6 w-6 ${conf?.color || "text-primary"}`} />
-                          </div>
-                          <div className="flex-1">
-                            <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
-                              {project.title}
-                            </CardTitle>
-                            <div className="flex flex-wrap items-center gap-2 mb-3">
-                              <Badge variant="outline" className={`text-xs ${conf?.badgeColor}`}>
-                                {project.type}
-                              </Badge>
-                              {cats.map((c) => (
-                                <Badge key={c} variant="secondary" className="text-xs">
-                                  {c}
-                                </Badge>
-                              ))}
-                              <Badge variant="outline" className="text-xs">
-                                <Calendar className="h-3 w-3 mr-1" />
-                                {project.year}
-                              </Badge>
-                            </div>
-                          </div>
+                      <div className="flex items-start gap-4">
+                        <div
+                          className={`p-3 rounded-xl ${
+                            conf?.bgColor || "bg-muted"
+                          } group-hover:scale-110 transition-transform duration-300`}
+                        >
+                          <Icon className={`h-6 w-6 ${conf?.color || "text-primary"}`} />
                         </div>
-                        {project.grade && (
-                          <div className="text-right">
-                            <Badge
-                              variant="default"
-                              className="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 font-bold"
-                            >
-                              <Star className="h-3 w-3 mr-1" />
-                              {project.grade}
+                        <div className="flex-1">
+                          <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
+                            {project.title}
+                          </CardTitle>
+                          <div className="flex flex-wrap items-center gap-2 mb-3">
+                            <Badge variant="outline" className={`text-xs ${conf?.badgeColor}`}>
+                              {project.type}
+                            </Badge>
+                            {cats.map((c) => (
+                              <Badge key={c} variant="secondary" className="text-xs">
+                                {c}
+                              </Badge>
+                            ))}
+                            <Badge variant="outline" className="text-xs">
+                              <Calendar className="h-3 w-3 mr-1" />
+                              {project.year}
                             </Badge>
                           </div>
-                        )}
+                        </div>
                       </div>
                     </CardHeader>
 
                     <CardContent className="space-y-6">
-                      <CardDescription className="text-base leading-relaxed">{project.description}</CardDescription>
+                      <CardDescription className="text-base leading-relaxed">
+                        {project.description}
+                      </CardDescription>
 
-                      {project.collaborators && (
+                      {project.collaborators && project.collaborators.length > 0 && (
                         <div className="space-y-2">
                           <p className="text-sm font-semibold text-muted-foreground">Team Members:</p>
                           <div className="flex flex-wrap gap-1">
@@ -252,7 +240,7 @@ export function Projects() {
                         </div>
                       )}
 
-                      {project.achievements && (
+                      {project.achievements && project.achievements.length > 0 && (
                         <div className="space-y-3">
                           <h4 className="text-sm font-semibold text-muted-foreground flex items-center gap-2">
                             <Trophy className="h-4 w-4" />
@@ -269,11 +257,28 @@ export function Projects() {
                         </div>
                       )}
 
-                      {(project.technologies || project.tags) && (
+                      {project.highlights && project.highlights.length > 0 && (
+                        <div className="space-y-3">
+                          <h4 className="text-sm font-semibold text-muted-foreground flex items-center gap-2">
+                            <Award className="h-4 w-4" />
+                            Highlights
+                          </h4>
+                          <div className="grid gap-2">
+                            {project.highlights.map((h: string) => (
+                              <div key={h} className="flex items-start gap-2 p-2 rounded-lg bg-muted/30">
+                                <ArrowRight className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                                <span className="text-sm">{h}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {project.tags && project.tags.length > 0 && (
                         <div className="space-y-3">
                           <h4 className="text-sm font-semibold text-muted-foreground">Technologies Used:</h4>
                           <div className="flex flex-wrap gap-2">
-                            {(project.technologies || project.tags).map((t: string) => (
+                            {project.tags.map((t: string) => (
                               <Badge
                                 key={t}
                                 variant="secondary"
@@ -286,7 +291,7 @@ export function Projects() {
                         </div>
                       )}
 
-                      {project.links && (
+                      {project.links && Object.keys(project.links).length > 0 && (
                         <div className="flex flex-wrap gap-2 pt-2">
                           {project.links.live && (
                             <Button size="sm" variant="default" asChild>

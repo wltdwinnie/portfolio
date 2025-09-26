@@ -64,11 +64,6 @@ export function About() {
                       <CardDescription className="text-base font-medium mb-2">
                         {edu.degree}
                       </CardDescription>
-                      {edu.description && (
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          {edu.description}
-                        </p>
-                      )}
                     </div>
                   </div>
                   <div className="text-right space-y-2">
