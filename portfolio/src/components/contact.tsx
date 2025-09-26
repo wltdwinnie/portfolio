@@ -190,9 +190,6 @@ export function Contact() {
                     )}
                   </Button>
                   
-                  <p className="text-xs text-muted-foreground text-center">
-                    This will open your email client with the message pre-filled.
-                  </p>
                 </form>
               </CardContent>
             </Card>
