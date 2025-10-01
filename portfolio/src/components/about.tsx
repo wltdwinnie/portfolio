@@ -62,7 +62,12 @@ export function About() {
                     <div className="flex-1">
                       <CardTitle className="text-xl mb-2">
                         {edu.schoolLink ? (
-                          <a href={edu.schoolLink} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                          <a
+                            href={edu.schoolLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:underline"
+                          >
                             {edu.institution}
                           </a>
                         ) : (
@@ -70,7 +75,9 @@ export function About() {
                         )}
                       </CardTitle>
                       <CardDescription className="text-base font-medium mb-2">{edu.degree}</CardDescription>
-                      {edu.description && <p className="text-sm text-muted-foreground leading-relaxed">{edu.description}</p>}
+                      {edu.description && (
+                        <p className="text-sm text-muted-foreground leading-relaxed">{edu.description}</p>
+                      )}
                     </div>
                   </div>
                   <div className="text-right space-y-2">
@@ -120,8 +127,9 @@ export function About() {
                     <div className="flex-1">
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                         <div>
+                          {/* Title logic: Role for single-role, Organization for grouped */}
                           <CardTitle className="text-xl">
-                            {exp.organization ? (
+                            {isGrouped ? (
                               exp.orgLink ? (
                                 <a
                                   href={exp.orgLink}
@@ -139,7 +147,26 @@ export function About() {
                               exp.role
                             )}
                           </CardTitle>
+
+                          {/* Subtitle: show org when single-role; type/location always */}
                           <CardDescription className="text-sm">
+                            {!isGrouped && (
+                              <>
+                                {exp.orgLink ? (
+                                  <a
+                                    href={exp.orgLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-primary hover:underline"
+                                  >
+                                    {exp.organization}
+                                  </a>
+                                ) : (
+                                  exp.organization
+                                )}
+                                {(exp.type || exp.location) ? " • " : ""}
+                              </>
+                            )}
                             {exp.type ? exp.type : null}
                             {exp.type && exp.location ? " • " : ""}
                             {exp.location ? exp.location : null}
@@ -157,6 +184,7 @@ export function About() {
                     </div>
                   </div>
                 </CardHeader>
+
                 <CardContent className="space-y-5">
                   {isGrouped ? (
                     <div className="space-y-5">
@@ -226,7 +254,9 @@ export function About() {
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  {activity.description && <p className="text-sm text-muted-foreground leading-relaxed">{activity.description}</p>}
+                  {activity.description && (
+                    <p className="text-sm text-muted-foreground leading-relaxed">{activity.description}</p>
+                  )}
                   {activity.skills && activity.skills.length > 0 && (
                     <div className="space-y-2">
                       <p className="text-xs font-semibold text-muted-foreground">Skills Developed:</p>
@@ -339,7 +369,9 @@ export function About() {
                           <Badge variant="outline">{lang.level}</Badge>
                         </div>
                         {lang.proficiency && <p className="text-sm text-muted-foreground">{lang.proficiency}</p>}
-                        {lang.breakdown && <p className="text-xs text-muted-foreground font-medium">{lang.breakdown}</p>}
+                        {lang.breakdown && (
+                          <p className="text-xs text-muted-foreground font-medium">{lang.breakdown}</p>
+                        )}
                       </div>
                     ))}
                   </div>

@@ -101,7 +101,7 @@ export const siteConfig = {
     },
 
     {
-      role: "HGS (Executive)",
+      role: "Honorary General Secretary",
       organization: "SMU Myanmar Community",
       orgLink: "https://www.linkedin.com/company/smu-myanmar-community/",
       logo: "/logos/smu-myanmar-community.png",
@@ -140,7 +140,7 @@ export const siteConfig = {
       logo: "/logos/the-forward-society.png",
       location: "Myanmar",
       period: "Jan 2023 - Apr 2024",
-      type: "Non-profit",
+      type: "Leadership",
       roles: [
         {
           title: "Operations Director",
