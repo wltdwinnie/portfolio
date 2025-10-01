@@ -49,44 +49,29 @@ export function Projects() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedDomain, setSelectedDomain] = useState<Domain>("all");
 
-  // Stats (dynamic)
   const totalProjects = siteConfig.projects.length;
   const teamProjects = siteConfig.projects.filter((p) => p.type === "Team Project").length;
-  const hasTop10 = siteConfig.projects.some((p) =>
-    (p.achievements || []).some((a: string) => a.toLowerCase().includes("top 10"))
-  );
+  const hasTop10 = siteConfig.projects.some((p) => (p.achievements || []).some((a: string) => a.toLowerCase().includes("top 10")));
 
-  // Filtering + sorting (newest -> oldest)
   const projectsToRender = useMemo(() => {
     const q = searchTerm.trim().toLowerCase();
-
     return [...siteConfig.projects]
       .filter((project) => {
-        // Use categories array (no more single category)
         const cats: string[] = project.categories || [];
-
         const matchesSearch =
           q.length === 0 ||
           project.title.toLowerCase().includes(q) ||
           project.description.toLowerCase().includes(q) ||
-          project.tags.some((tag: string) => tag.toLowerCase().includes(q));
-
+          (project.tags || []).some((tag: string) => tag.toLowerCase().includes(q));
         const matchesType = activeTab === "all" || project.type === activeTab;
-
-        const matchesDomain =
-          selectedDomain === "all" || cats.includes(selectedDomain);
-
+        const matchesDomain = selectedDomain === "all" || cats.includes(selectedDomain);
         return matchesSearch && matchesType && matchesDomain;
       })
-      .sort(
-        (a, b) =>
-          new Date(b.date).getTime() - new Date(a.date).getTime()
-      );
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   }, [activeTab, searchTerm, selectedDomain]);
 
   return (
     <section className="container mx-auto px-4 py-16">
-      {/* Header */}
       <div className="text-center mb-12">
         <div className="inline-flex items-center justify-center p-2 bg-primary/10 rounded-full mb-4">
           <Code className="h-8 w-8 text-primary" />
@@ -97,7 +82,6 @@ export function Projects() {
         </p>
       </div>
 
-      {/* Search + Domain Filter */}
       <div className="mb-8 space-y-4">
         <div className="flex flex-col md:flex-row gap-4 items-center justify-between max-w-4xl mx-auto">
           <div className="relative w-full md:w-96">
@@ -109,7 +93,6 @@ export function Projects() {
               className="pl-10"
             />
           </div>
-
           <div className="flex items-center gap-2">
             <Filter className="h-4 w-4 text-muted-foreground" />
             <select
@@ -128,7 +111,6 @@ export function Projects() {
         </div>
       </div>
 
-      {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-4xl mx-auto">
         <Card className="text-center p-4 hover:shadow-md transition-shadow">
           <div className="flex justify-center mb-2">
@@ -160,8 +142,7 @@ export function Projects() {
         </Card>
       </div>
 
-      {/* Tabs by Type */}
-      <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as typeof activeTab)} className="w-full">
+      <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as any)} className="w-full">
         <TabsList className="grid w-full grid-cols-3 mb-8">
           <TabsTrigger value="all">All</TabsTrigger>
           <TabsTrigger value="Team Project">Team</TabsTrigger>
@@ -183,7 +164,6 @@ export function Projects() {
                 const conf = typeConfig[project.type as keyof typeof typeConfig];
                 const Icon = conf?.icon || Code;
                 const cats: string[] = project.categories || [];
-
                 return (
                   <Card
                     key={`${project.title}-${i}`}
@@ -193,21 +173,13 @@ export function Projects() {
                   >
                     <CardHeader className="space-y-4">
                       <div className="flex items-start gap-4">
-                        <div
-                          className={`p-3 rounded-xl ${
-                            conf?.bgColor || "bg-muted"
-                          } group-hover:scale-110 transition-transform duration-300`}
-                        >
+                        <div className={`p-3 rounded-xl ${conf?.bgColor || "bg-muted"} group-hover:scale-110 transition-transform duration-300`}>
                           <Icon className={`h-6 w-6 ${conf?.color || "text-primary"}`} />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
-                            {project.title}
-                          </CardTitle>
+                          <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">{project.title}</CardTitle>
                           <div className="flex flex-wrap items-center gap-2 mb-3">
-                            <Badge variant="outline" className={`text-xs ${conf?.badgeColor}`}>
-                              {project.type}
-                            </Badge>
+                            <Badge variant="outline" className={`text-xs ${conf?.badgeColor}`}>{project.type}</Badge>
                             {cats.map((c) => (
                               <Badge key={c} variant="secondary" className="text-xs">
                                 {c}
@@ -221,11 +193,8 @@ export function Projects() {
                         </div>
                       </div>
                     </CardHeader>
-
                     <CardContent className="space-y-6">
-                      <CardDescription className="text-base leading-relaxed">
-                        {project.description}
-                      </CardDescription>
+                      <CardDescription className="text-base leading-relaxed">{project.description}</CardDescription>
 
                       {project.collaborators && project.collaborators.length > 0 && (
                         <div className="space-y-2">
@@ -279,11 +248,7 @@ export function Projects() {
                           <h4 className="text-sm font-semibold text-muted-foreground">Technologies Used:</h4>
                           <div className="flex flex-wrap gap-2">
                             {project.tags.map((t: string) => (
-                              <Badge
-                                key={t}
-                                variant="secondary"
-                                className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
-                              >
+                              <Badge key={t} variant="secondary" className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors cursor-default">
                                 {t}
                               </Badge>
                             ))}
@@ -344,7 +309,6 @@ export function Projects() {
         </TabsContent>
       </Tabs>
 
-      {/* Call to Action */}
       <div className="mt-16 text-center">
         <Card className="max-w-3xl mx-auto">
           <CardContent className="pt-8">
@@ -361,7 +325,7 @@ export function Projects() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" asChild>
                   <a href="/contact">
-                    Let's Collaborate
+                    Let&apos;s Collaborate
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>

@@ -2,12 +2,12 @@ export const siteConfig = {
   name: "Win Lei Thawdar",
   nickname: "Winnie",
   role: "Computer Science Student",
-  university: "Singapore Management University", 
+  university: "Singapore Management University",
   tagline: "Passionate about coding, creativity, and making positive impact through technology.",
   location: "Singapore",
   email: "winleithawdar2005@gmail.com",
   phone: "+95 9 975 545 660",
-  
+
   links: {
     github: "https://github.com/wltdwinnie",
     linkedin: "https://www.linkedin.com/in/winleithawdar",
@@ -16,24 +16,21 @@ export const siteConfig = {
   },
 
   about: {
-    intro: "I'm a Computer Science undergraduate at SMU studying with ASEAN Scholarship, passionate about coding, creativity, and technology. My hobbies include analytical aspects like coding, managing projects, and artistic pursuits like drawing and playing ukulele.",
-    mission: "Beyond academics, I'm deeply committed to making positive impact in our society through extensive volunteer work, ranging from teaching Computer Science for kids to project management.",
-    
+    intro:
+      "I'm a Computer Science undergraduate at SMU studying with ASEAN Scholarship, passionate about coding, creativity, and technology. My hobbies include analytical aspects like coding, managing projects, and artistic pursuits like drawing and playing ukulele.",
+    mission:
+      "Beyond academics, I'm deeply committed to making positive impact in our society through extensive volunteer work, ranging from teaching Computer Science for kids to project management.",
     skills: {
-      programming: ["Java", "Python", "C++", "HTML/CSS", "JavaScript", "TypeScript"],
+      programming: ["Java", "Python", "C", "JavaScript", "TypeScript", "HTML/CSS"],
       technologies: ["Next.js", "React", "Tailwind CSS", "Git", "Vercel", "Node.js"],
-      tools: ["Microsoft Office", "Google Workspace", "Adobe Photoshop", "VS Code", "Figma"],
-      soft: ["Leadership", "Project Management", "Communication", "Problem-Solving", "Creativity", "Critical Thinking"]
+      tools: ["Figma", "Adobe Photoshop", "Google Workspace", "Microsoft Office", "VS Code"],
+      soft: ["Leadership", "Project Management", "Communication", "Problem-Solving", "Creativity", "Critical Thinking"],
     },
-
     canDo: [
       "Build responsive web apps with Next.js, React, TypeScript, Tailwind CSS, and shadcn/ui",
-      "Implement auth flows, protected routes, and form validation",
-      "Design relational schemas and write SQL",
-      "Create REST API routes in Next.js and integrate external APIs",
-      "Deploy to Vercel, manage environment variables, and optimize images/bundle size",
-      "Set up Git workflows (branches, PRs, code reviews) and keep clean commits",
-    ]
+      "Design schemas, integrate REST APIs, and deploy to Vercel with env management and image optimization",
+      "Create clean UI systems in Figma and implement accessible components and themes",
+    ],
   },
 
   education: [
@@ -43,101 +40,203 @@ export const siteConfig = {
       period: "2024 - Present",
       scholarship: "ASEAN Undergraduate Scholarship",
       status: "Current",
+      logo: "/logos/smu.png",
+      schoolLink: "https://www.smu.edu.sg/",
+      description:
+        "Pursuing comprehensive Computer Science education with focus on software engineering, algorithms, and system design.",
     },
     {
-      institution: "Royal Academic Institute",
+      institution: "Royal Academic Institute, KAI Global School",
       degree: "Ontario Secondary School Diploma (OSSD)",
       period: "2023",
       grade: "93% Overall",
-      achievements: ["RAI Partial Scholarship", "Exemplary Effort Award"],
+      logo: "/logos/rai.png",
+      schoolLink: "https://kaiglobalschool.com/",
+      description: "Completed high school with exceptional academic performance across multiple subjects.",
     },
     {
       institution: "IIP International School",
       degree: "International General Certificate for Secondary Education (IGCSE)",
       period: "2022",
       grade: "7A*",
-    }
+      logo: "/logos/iip.png",
+      schoolLink: "https://iip-website.vercel.app/",
+      description: "Completed secondary education with exceptional academic performance across multiple subjects.",
+    },
   ],
 
+  // Experience supports grouped organizations (roles[]) and single-role entries
   experience: [
     {
       role: "Data Quality Assurance Student Assistant",
       organization: "AI Singapore",
-      period: "2025 - Present",
+      orgLink: "https://www.linkedin.com/company/ai-singapore/",
+      logo: "/logos/ai-singapore.png",
+      period: "Sep 2025 - Present",
       type: "Student Assistant",
       location: "Singapore",
-      achievements: [],
-      description: "Supported data quality processes and QA workflows for AI Singapore projects."
+      achievements: [
+        "Authored culturally grounded prompt–response pairs across 9 SEA languages",
+        "Verified reliability and accuracy via cross-checks and qualitative evaluations",
+        "Proposed guideline improvements to raise data quality and coverage balance",
+      ],
+      description:
+        "Supported end-to-end data quality workflows with multilingual coverage and rigorous evaluation of LLM outputs.",
     },
+
     {
-      role: "Marketing Lead",
       organization: "SMU AI (SMUAI)",
-      period: "2025 - Present",
-      type: "Student Club Leadership",
+      orgLink: "https://www.linkedin.com/company/smuai/",
+      logo: "/logos/smuai.png",
       location: "Singapore",
-      achievements: [],
-      description: "Leading marketing strategy and content for SMUAI initiatives and events."
+      type: "Student Club Leadership",
+      period: "2025 - Present",
+      roles: [
+        {
+          title: "Marketing Lead",
+          period: "2025 - Present",
+          achievements: [
+            "Owned marketing strategy, content calendar, and event campaigns",
+            "Grew awareness via multi-channel content and partnerships",
+            "Streamlined creative workflow and brand consistency",
+          ],
+        },
+      ],
     },
     {
-      role: "Honorary General Secretary",
       organization: "SMU Myanmar Community",
-      period: "2025 - Present",
-      type: "Student Club Leadership",
+      orgLink: "https://www.linkedin.com/company/smu-myanmar-community/",
+      logo: "/logos/smu-myanmar-community.png",
       location: "Singapore",
-      achievements: [],
-      description: "Executive committee responsibilities for community operations and engagement."
-    },
-    {
-      role: "Marketing Executive",
-      organization: "SMU Ellipsis",
-      period: "2025 - Present",
       type: "Student Club Executive",
-      location: "Singapore",
-      achievements: [],
-      description: "Marketing execution for Ellipsis initiatives and Tech Series activities."
+      period: "2025 - Present",
+      roles: [
+        {
+          title: "HGS (Executive)",
+          period: "2025 - Present",
+          achievements: [
+            "Led planning and operations for community activities",
+            "Coordinated resources and communications across committees",
+            "Established simple SOPs for reliable delivery",
+          ],
+        },
+      ],
     },
     {
-      role: "Operations Director",
+      organization: "SMU Ellipsis",
+      orgLink: "https://www.linkedin.com/company/smu-ellipsis/",
+      logo: "/logos/ellipsis.png",
+      location: "Singapore",
+      type: "Student Club Marketing",
+      period: "2025 - Present",
+      roles: [
+        {
+          title: "Marketing Executive",
+          period: "2025 - Present",
+          achievements: [
+            "Executed campaigns for Ellipsis initiatives and Tech Series",
+            "Produced on-brand assets and streamlined approvals",
+            "Collaborated with speakers and partner clubs on content",
+          ],
+        },
+      ],
+    },
+
+    {
       organization: "The Forward Society",
+      orgLink: "https://www.linkedin.com/company/the-forward-society/",
+      logo: "/logos/the-forward-society.png",
+      location: "Myanmar",
+      period: "Jan 2023 - Apr 2024",
+      type: "Non-profit",
+      roles: [
+        {
+          title: "Operations Director",
+      period: "Sep 2023 - Apr 2024",
       period: "Sep 2023 - Apr 2024",
       type: "Volunteer Leadership",
       location: "Myanmar",
-      achievements: [
-        "Led multiple cross-functional teams",
-        "Implemented efficiency systems and workflows", 
-        "Won 'Volunteer of the Term' award 3 consecutive times",
-        "Coordinated community outreach programs"
+          period: "Sep 2023 - Apr 2024",
+      type: "Volunteer Leadership",
+      location: "Myanmar",
+          achievements: [
+            "Implemented SOPs, runbooks, and reporting cadence to streamline multi-program delivery",
+            "Aligned stakeholders and budgets; enforced QA checkpoints and retrospectives",
+            "Standardized dashboards and templates to reduce rework across initiatives",
+          ],
+        },
+        {
+          title: "Project Development Officer",
+          period: "Jul 2023 - Aug 2023",
+          achievements: [
+            "Scoped initiatives and authored proposals with objectives and success metrics",
+            "Coordinated vendors and venues; managed run-of-show for smooth execution",
+            "Consolidated lessons into reusable playbooks for future programs",
+          ],
+        },
+        {
+          title: "Student Affairs Officer",
+          period: "Apr 2023 - Jun 2023",
+          achievements: [
+            "Created facilitator onboarding/training and a practical handbook",
+            "Standardized checklists, forms, and comms templates to improve handoffs",
+            "Maintained attendance/CRM and feedback loops to lift session quality",
+          ],
+        },
+        {
+          title: "Graphic Designer",
+          period: "Apr 2023 - Aug 2023",
+          achievements: [
+            "Produced brand-consistent social and print assets (pamphlets, IDs, letterheads)",
+            "Maintained visual standards and fast-turn production for campaigns",
+            "Collaborated with ops and marketing on timelines and requirements",
+          ],
+        },
+        {
+          title: "Facilitator",
+          period: "Jan 2023 - Mar 2023",
+          achievements: [
+            "Supported event operations: attendance, MC duties, participant coordination",
+            "Assisted run-of-show timing and transitions for smooth sessions",
+            "Collected on-site feedback to inform future improvements",
+          ],
+        },
       ],
-      description: "Directed operations for educational non-profit, managing teams and implementing systems that improved organizational efficiency."
     },
+
     {
       role: "Graphic Designer",
-      organization: "Start Smart",
-      period: "Aug 2023 - Jan 2024", 
+      organization: "Start Smart Organization",
+      orgLink: "https://www.linkedin.com/company/start-smart-organization/",
+      logo: "/logos/start-smart.png",
+      period: "Aug 2023 - Feb 2024",
       type: "Creative Volunteer",
       location: "Remote",
       achievements: [
-        "Created brand-aligned visual designs",
-        "Increased social media engagement by 40%",
-        "Designed promotional materials for campaigns",
-        "Maintained consistent brand identity"
+        "Crafted visually engaging designs aligned to brand identity across social media",
+        "Delivered campaign-ready assets on tight timelines with feedback iterations",
+        "Maintained cohesive visual systems and consistent tone-of-voice",
       ],
-      description: "Developed visual content and brand materials for educational technology startup, focusing on clean, modern design principles."
+      description:
+        "Produced brand-consistent digital assets that resonated with audiences across campaigns and channels.",
     },
+
     {
-      role: "CS Curriculum Development Team Member",
+      role: "Curriculum Development Team Member",
       organization: "Thate Pan Hub",
+      orgLink: "https://www.linkedin.com/company/thate-pan-hub/",
+      logo: "/logos/thate-pan-hub.png",
       period: "Nov 2023 - Feb 2024",
-      type: "Education Volunteer", 
-      location: "Myanmar",
+      type: "Education Volunteer",
+      location: "Yangon, Myanmar · Hybrid",
       achievements: [
-        "Co-taught Hour of Code 2023 event",
-        "Enhanced Computer Science curriculum for children",
-        "Developed age-appropriate coding exercises",
-        "Mentored 50+ students in programming basics"
+        "Analyzed and enhanced CS curriculum; authored lesson plans and assessments",
+        "Delivered Hour of Code 2023; facilitated first-time programming sessions",
+        "Iterated content based on classroom feedback and outcomes",
       ],
-      description: "Contributed to computer science education initiatives, developing curriculum and teaching programming fundamentals to young learners."
-    }
+      description:
+        "Contributed to CS education by improving curricula and delivering hands-on programming workshops.",
+    },
   ],
 
   activities: [
@@ -146,9 +245,9 @@ export const siteConfig = {
       role: "Participant",
       period: "Jun 2024",
       location: "University of the Thai Chamber of Commerce (UTCC), Thailand",
-      skills: ["Cross-cultural communication", "Creative storytelling", "Collaboration", "Public speaking"],
+      skills: ["Cross-cultural communication", "Cultural diplomacy", "Creative storytelling"],
       description:
-        "Participated in a three-day ASEAN soft power camp at UTCC, collaborating with regional peers on cultural diplomacy, creative economy, and nation-branding challenges."
+        "Collaborated with regional peers on cultural diplomacy, creative economy, and nation-branding challenges through hands-on workshops and prototyping.",
     },
     {
       name: "KAI Math Club",
@@ -169,16 +268,16 @@ export const siteConfig = {
   ],
 
   languages: [
-    { 
-      name: "Burmese (Myanmar)", 
+    {
+      name: "Burmese (Myanmar)",
       level: "Native",
-      proficiency: "Full professional proficiency in speaking, reading, and writing"
+      proficiency: "Full professional proficiency in speaking, reading, and writing",
     },
-    { 
-      name: "English", 
+    {
+      name: "English",
       level: "Professional (IELTS 7.5)",
       breakdown: "Reading: 8, Listening: 7.5, Speaking: 7, Writing: 6.5",
-      proficiency: "Advanced professional proficiency across all skills"
+      proficiency: "Advanced professional proficiency across all skills",
     },
   ],
 
@@ -189,16 +288,14 @@ export const siteConfig = {
       categories: ["Personal", "Tech"],
       date: "2025-09-20",
       year: "2025",
-      description: "Modern multi-page portfolio with a clean lavender theme, dark/light modes, and a working contact form.",
+      description:
+        "Modern multi-page portfolio with App Router, dark/light modes, responsive layouts, and multi-category project filtering.",
       tags: ["Next.js 15", "TypeScript", "Tailwind CSS", "shadcn/ui"],
       links: {
         live: "https://winleithawdar.vercel.app",
-        github: "https://github.com/wltdwinnie/portfolio"
+        github: "https://github.com/wltdwinnie/portfolio",
       },
-      highlights: [
-        "Clean lavender theme and responsive layout",
-        "Projects, About, Contact pages with persistent header"
-      ]
+      highlights: ["Clean visual hierarchy and accessibility", "Deployed on Vercel with image optimization"],
     },
     {
       title: "AutoGreen.sg",
@@ -206,34 +303,17 @@ export const siteConfig = {
       categories: ["Team", "Tech"],
       date: "2025-09-06",
       year: "2025",
-      description: "Sustainability platform with Chrome extension for eco-product detection and a Next.js dashboard.",
+      description:
+        "Sustainability platform and Chrome extension that highlights eco products and auto-selects greener checkout defaults.",
       tags: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Chrome Extension", "PostgreSQL"],
       links: {
         live: "https://autogreen-sg.vercel.app",
         video: "https://youtu.be/LJVyUBTtiWI?si=Kt1CSlS3ElK2wxFL",
-        github: "https://github.com/Onyxxx17/AutoGreen.sg"
+        github: "https://github.com/Onyxxx17/AutoGreen.sg",
       },
       collaborators: ["Aung Ye Thant Hein", "Chue Myat Sandy", "Htet Shwe Win Than", "Win Lei Thawdar", "Wunna Aung"],
-      achievements: [
-        "Top 10 teams in Ellipsis Tech Series Hackathon",
-        "Automated eco-product detection on major platforms"
-      ]
-    },
-    {
-      title: "Ellipsis Tech Series 2025 Website Design",
-      type: "Personal Project",
-      categories: ["Personal", "Creative"],
-      date: "2025-08-15",
-      year: "2025",
-      description: "Individual Figma prototype for the 2025 Tech Series website with clean sections and event flows.",
-      tags: ["Figma", "UI/UX"],
-      links: {
-        figma: "https://www.figma.com/proto/B8xQeuv59qQjf3CX5nNfwm/TechSeries2025?node-id=0-1"
-      },
-      highlights: [
-        "Clear information hierarchy and visual rhythm",
-        "Mobile-first flows and interaction details"
-      ]
+      achievements: ["Top 10 teams in Ellipsis Tech Series Hackathon"],
+      highlights: ["Aligned to SG Green Plan pillars", "No-cutlery, paperless receipts, green delivery defaults"],
     },
     {
       title: "RentLah!",
@@ -241,52 +321,16 @@ export const siteConfig = {
       categories: ["Team", "Tech"],
       date: "2025-07-20",
       year: "2025",
-      description: "Student housing platform with verified listings, map search, and real-time chat.",
+      description:
+        "Student housing platform with verified listings, map search, and real-time chat optimized for campus proximity.",
       tags: ["Next.js", "PostgreSQL", "Drizzle ORM", "Socket.io", "Tailwind CSS", "shadcn/ui"],
       links: {
         live: "https://rent-lah-heap.vercel.app",
         video: "https://youtu.be/d-NnnbK4jHU?si=Dz6zmLtKdbUdXdpK",
-        github: "https://github.com/wltdwinnie/RentLah-HEAP"
+        github: "https://github.com/wltdwinnie/RentLah-HEAP",
       },
       collaborators: ["Aung Ye Thant Hein", "Chue Myat Sandy", "Htet Shwe Win Than", "Lin Khant Pe Thein", "Win Lei Thawdar"],
-      highlights: [
-        "Verified listings and campus proximity",
-        "Integrated chat and modern UI"
-      ]
-    },
-    {
-      title: "AfterClass UI Competition",
-      type: "Team Project",
-      categories: ["Team", "Creative"],
-      date: "2025-05-15",
-      year: "2025",
-      description: "Module submission for a UI design competition focusing on clean information presentation and workflows.",
-      tags: ["Figma", "UI/UX"],
-      links: {
-        figma: "https://www.figma.com/proto/rs7VSsfqqxucYFZWeYvjTW/-UI-Cubed--AfterClass-Design-Submission?node-id=3531-3327"
-      },
-      collaborators: ["Htet Shwe Win Than", "Tai Wei Sin", "Win Lei Thawdar"],
-      highlights: [
-        "Polished visual system",
-        "User-centric interaction design"
-      ]
-    },
-    {
-      title: "Parade Card Game",
-      type: "Team Project",
-      categories: ["Team", "Tech"],
-      date: "2025-04-15",
-      year: "2025",
-      description: "Java implementation of the Parade card game with multiple modes and client-server multiplayer.",
-      tags: ["Java", "OOP", "Client-Server", "Console UI"],
-      links: {
-        github: "https://github.com/wltdwinnie/ParadeCardGame"
-      },
-      collaborators: ["Aum Jiwoo", "Brandon Boo", "Chua Qihan", "Darrius Ng", "Rayner Sim", "Win Lei Thawdar"],
-      highlights: [
-        "Human vs Human / AI / Multiplayer modes",
-        "Score tracking, hints, history, undo"
-      ]
+      highlights: ["Verified listings and chat", "Deployed on Vercel with server routes"],
     },
     {
       title: "SMU Nest",
@@ -294,60 +338,14 @@ export const siteConfig = {
       categories: ["Team", "Creative"],
       date: "2025-03-15",
       year: "2025",
-      description: "Mobile prototype to help SMU students find safe, affordable housing near campus.",
+      description:
+        "Mobile prototype that helps students find affordable housing with student-verified reviews and travel-time context.",
       tags: ["Figma", "Prototyping", "UX Research"],
       links: {
-        figma: "https://www.figma.com/proto/qcTJButXewYbUqDiTp5pwJ/SMU-Nest-Prototype?node-id=11-8"
+        figma: "https://www.figma.com/proto/qcTJButXewYbUqDiTp5pwJ/SMU-Nest-Prototype?node-id=11-8",
       },
       collaborators: ["Ho Xin Yu", "Htet Shwe Win Than", "Kaitlin Gardner", "Sierra Colvin", "Win Lei Thawdar"],
-      highlights: [
-        "Student-specific filters and travel-time context",
-        "Research-driven empathy and flows"
-      ]
+      highlights: ["Student-specific filters", "Research-driven flows and clear information design"],
     },
-    {
-      title: "Business Mastery Workshop",
-      type: "Personal Project",
-      categories: ["Personal", "Leadership"],
-      date: "2023-11-05",
-      year: "2023",
-      description: "3-day virtual workshop on business management, leadership, and HR fundamentals (proposal authored and organized).",
-      tags: ["Leadership", "Workshop", "Operations"],
-      links: {},
-      highlights: [
-        "Program design & operations",
-        "150–200 participants target"
-      ]
-    },
-    {
-      title: "Photoshop Essentials Workshop",
-      type: "Personal Project",
-      categories: ["Personal", "Leadership"],
-      date: "2023-08-20",
-      year: "2023",
-      description: "Two-day beginner-friendly Photoshop workshop (proposal authored) covering core editing and design concepts.",
-      tags: ["Workshop", "Photoshop", "Education"],
-      links: {},
-      highlights: [
-        "80–100 participants target",
-        "Hands-on practical outline"
-      ]
-    },
-    {
-      title: "Graphic Design Portfolio",
-      type: "Personal Project",
-      categories: ["Personal", "Creative"],
-      date: "2024-02-01",
-      year: "2024",
-      description: "A curated collection of brand identities, social media graphics, event materials, and artwork.",
-      tags: ["Photoshop", "Illustrator", "Branding", "Social Media", "Layout"],
-      links: {
-        portfolio: "https://www.canva.com/design/DAGuor6sXg4/u4ZjrrmetCGemY4mpusWUg/view"
-      },
-      highlights: [
-        "Consistent brand systems and visual hierarchy",
-        "Production-ready assets for real initiatives"
-      ]
-    }
-  ]
+  ],
 };

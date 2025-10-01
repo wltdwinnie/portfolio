@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/lib/config";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -16,10 +17,10 @@ import {
   Globe,
   Calendar,
   MapPin,
-  Star,
   CheckCircle,
   ExternalLink,
   ArrowRight,
+  Linkedin,
 } from "lucide-react";
 
 export function About() {
@@ -31,17 +32,13 @@ export function About() {
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">About Me</h1>
         <div className="max-w-3xl mx-auto space-y-4">
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            {siteConfig.about.intro}
-          </p>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            {siteConfig.about.mission}
-          </p>
+          <p className="text-xl text-muted-foreground leading-relaxed">{siteConfig.about.intro}</p>
+          <p className="text-lg text-muted-foreground leading-relaxed">{siteConfig.about.mission}</p>
         </div>
       </div>
 
       {/* Main Content */}
-      <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as typeof activeTab)} className="w-full">
+      <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v)} className="w-full">
         <TabsList className="grid w-full grid-cols-4 mb-8">
           <TabsTrigger value="education">Education</TabsTrigger>
           <TabsTrigger value="experience">Experience</TabsTrigger>
@@ -49,21 +46,34 @@ export function About() {
           <TabsTrigger value="skills">Skills</TabsTrigger>
         </TabsList>
 
-        {/* Education Tab */}
+        {/* Education */}
         <TabsContent value="education" className="space-y-6">
           {siteConfig.education.map((edu, i) => (
-            <Card key={i} className="hover:shadow-md transition-shadow">
+            <Card key={`${edu.institution}-${i}`} className="hover:shadow-md transition-shadow">
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-primary/10 rounded-lg">
-                      <GraduationCap className="h-6 w-6 text-primary" />
+                    <div className="shrink-0 rounded-lg border bg-card p-2 flex items-center justify-center">
+                      <Image
+                        src={edu.logo || "/logos/placeholder.png"}
+                        alt={`${edu.institution} logo`}
+                        width={44}
+                        height={44}
+                        className="rounded-md object-contain"
+                      />
                     </div>
                     <div className="flex-1">
-                      <CardTitle className="text-xl mb-2">{edu.institution}</CardTitle>
-                      <CardDescription className="text-base font-medium mb-2">
-                        {edu.degree}
-                      </CardDescription>
+                      <CardTitle className="text-xl mb-2">
+                        {edu.schoolLink ? (
+                          <a href={edu.schoolLink} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                            {edu.institution}
+                          </a>
+                        ) : (
+                          edu.institution
+                        )}
+                      </CardTitle>
+                      <CardDescription className="text-base font-medium mb-2">{edu.degree}</CardDescription>
+                      {edu.description && <p className="text-sm text-muted-foreground leading-relaxed">{edu.description}</p>}
                     </div>
                   </div>
                   <div className="text-right space-y-2">
@@ -75,7 +85,7 @@ export function About() {
                 </div>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-2">
                   {edu.scholarship && (
                     <Badge className="bg-amber-50 dark:bg-amber-950 text-amber-800 dark:text-amber-200 border border-amber-200 dark:border-amber-800">
                       <Award className="h-3 w-3 mr-1" />
@@ -84,81 +94,119 @@ export function About() {
                   )}
                   {edu.grade && (
                     <Badge className="bg-green-50 dark:bg-green-950 text-green-700 dark:text-green-300 border border-green-200 dark:border-green-800">
-                      <Star className="h-3 w-3 mr-1" />
                       {edu.grade}
                     </Badge>
                   )}
                 </div>
-                {edu.achievements && edu.achievements.length > 0 && (
-                  <div className="space-y-2">
-                    <p className="text-sm font-semibold text-muted-foreground">Key Achievements:</p>
-                    <div className="flex flex-wrap gap-1">
-                      {edu.achievements.map((achievement: string) => (
-                        <Badge key={achievement} variant="outline" className="text-xs">
-                          <CheckCircle className="h-3 w-3 mr-1" />
-                          {achievement}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </CardContent>
             </Card>
           ))}
         </TabsContent>
 
-        {/* Experience Tab */}
+        {/* Experience */}
         <TabsContent value="experience" className="space-y-6">
-          {siteConfig.experience.map((exp, i) => (
-            <Card key={`${exp.role}-${i}`} className="hover:shadow-md transition-shadow">
-              <CardHeader>
-                <div className="flex items-start justify-between">
+          {siteConfig.experience.map((exp: any, i: number) => {
+            const isGrouped = Array.isArray(exp.roles) && exp.roles.length > 0;
+            return (
+              <Card key={`${exp.organization || exp.role}-${i}`} className="hover:shadow-md transition-shadow">
+                <CardHeader>
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-primary/10 rounded-lg">
-                      <Briefcase className="h-6 w-6 text-primary" />
+                    <div className="shrink-0 rounded-lg border bg-card p-2 flex items-center justify-center">
+                      <Image
+                        src={exp.logo || "/logos/placeholder.png"}
+                        alt={`${(exp.organization || "Organization")} logo`}
+                        width={44}
+                        height={44}
+                        className="rounded-md object-contain"
+                      />
                     </div>
                     <div className="flex-1">
-                      <CardTitle className="text-xl mb-2">{exp.role}</CardTitle>
-                      <CardDescription className="text-base font-medium mb-2">
-                        {exp.organization} {exp.type && <span className="text-primary">• {exp.type}</span>}
-                      </CardDescription>
-                      {exp.description && (
-                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                          {exp.description}
-                        </p>
-                      )}
-                      <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                        <MapPin className="h-3 w-3" />
-                        {exp.location}
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                        <div>
+                          <CardTitle className="text-xl">
+                            {exp.organization ? (
+                              exp.orgLink ? (
+                                <a
+                                  href={exp.orgLink}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-1 text-primary hover:underline"
+                                >
+                                  {exp.organization}
+                                  <Linkedin className="h-4 w-4" />
+                                </a>
+                              ) : (
+                                exp.organization
+                              )
+                            ) : (
+                              exp.role
+                            )}
+                          </CardTitle>
+                          <CardDescription className="text-sm">
+                            {exp.type ? exp.type : null}
+                            {exp.type && exp.location ? " • " : ""}
+                            {exp.location ? exp.location : null}
+                          </CardDescription>
+                        </div>
+                        <Badge>
+                          <Calendar className="h-3 w-3 mr-1" />
+                          {exp.period}
+                        </Badge>
                       </div>
+
+                      {!isGrouped && exp.description && (
+                        <p className="text-sm text-muted-foreground leading-relaxed mt-3">{exp.description}</p>
+                      )}
                     </div>
                   </div>
-                  <Badge>
-                    <Calendar className="h-3 w-3 mr-1" />
-                    {exp.period}
-                  </Badge>
-                </div>
-              </CardHeader>
-              <CardContent>
-                {exp.achievements && exp.achievements.length > 0 && (
-                  <div className="space-y-3">
-                    <p className="text-sm font-semibold text-muted-foreground">Key Achievements:</p>
-                    <div className="grid gap-2">
-                      {exp.achievements.map((achievement: string) => (
-                        <div key={achievement} className="flex items-start gap-2 text-sm">
-                          <CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                          <span>{achievement}</span>
+                </CardHeader>
+                <CardContent className="space-y-5">
+                  {isGrouped ? (
+                    <div className="space-y-5">
+                      {exp.roles.map((r: any, idx: number) => (
+                        <div key={`${r.title}-${idx}`} className="rounded-lg border p-3">
+                          <div className="flex items-start justify-between gap-2">
+                            <div>
+                              <p className="font-semibold">{r.title}</p>
+                              {r.period && <p className="text-xs text-muted-foreground mt-0.5">{r.period}</p>}
+                            </div>
+                          </div>
+                          {r.achievements && r.achievements.length > 0 && (
+                            <div className="mt-3 grid gap-2">
+                              {r.achievements.map((a: string) => (
+                                <div key={a} className="flex items-start gap-2 text-sm">
+                                  <ArrowRight className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                                  <span>{a}</span>
+                                </div>
+                              ))}
+                            </div>
+                          )}
                         </div>
                       ))}
                     </div>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          ))}
+                  ) : (
+                    exp.achievements &&
+                    exp.achievements.length > 0 && (
+                      <div className="space-y-3">
+                        <p className="text-sm font-semibold text-muted-foreground">Key Achievements:</p>
+                        <div className="grid gap-2">
+                          {exp.achievements.map((a: string) => (
+                            <div key={a} className="flex items-start gap-2 text-sm">
+                              <ArrowRight className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                              <span>{a}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )
+                  )}
+                </CardContent>
+              </Card>
+            );
+          })}
         </TabsContent>
 
-        {/* Activities Tab */}
+        {/* Activities */}
         <TabsContent value="activities" className="space-y-6">
           <div className="grid gap-6 sm:grid-cols-2">
             {siteConfig.activities.map((activity, i) => (
@@ -181,11 +229,7 @@ export function About() {
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  {activity.description && (
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {activity.description}
-                    </p>
-                  )}
+                  {activity.description && <p className="text-sm text-muted-foreground leading-relaxed">{activity.description}</p>}
                   {activity.skills && activity.skills.length > 0 && (
                     <div className="space-y-2">
                       <p className="text-xs font-semibold text-muted-foreground">Skills Developed:</p>
@@ -204,10 +248,9 @@ export function About() {
           </div>
         </TabsContent>
 
-        {/* Skills Tab */}
+        {/* Skills */}
         <TabsContent value="skills" className="space-y-8">
           <div className="grid gap-8 md:grid-cols-2">
-            {/* Technical Skills */}
             <Card className="hover:shadow-md transition-shadow">
               <CardHeader>
                 <CardTitle className="flex items-center gap-3">
@@ -226,7 +269,6 @@ export function About() {
                     ))}
                   </div>
                 </div>
-
                 <div className="space-y-4">
                   <h4 className="font-semibold text-sm text-muted-foreground">Frameworks & Platforms</h4>
                   <div className="flex flex-wrap gap-2">
@@ -237,7 +279,6 @@ export function About() {
                     ))}
                   </div>
                 </div>
-
                 <div className="space-y-4">
                   <h4 className="font-semibold text-sm text-muted-foreground">Tools & Software</h4>
                   <div className="flex flex-wrap gap-2">
@@ -251,9 +292,7 @@ export function About() {
               </CardContent>
             </Card>
 
-            {/* What I can do + Soft Skills + Languages */}
             <div className="space-y-6">
-              {/* What I can do */}
               {siteConfig.about.canDo && siteConfig.about.canDo.length > 0 && (
                 <Card className="hover:shadow-md transition-shadow">
                   <CardHeader>
@@ -272,7 +311,6 @@ export function About() {
                 </Card>
               )}
 
-              {/* Soft Skills */}
               <Card className="hover:shadow-md transition-shadow">
                 <CardHeader>
                   <CardTitle>Soft Skills</CardTitle>
@@ -288,7 +326,6 @@ export function About() {
                 </CardContent>
               </Card>
 
-              {/* Languages */}
               <Card className="hover:shadow-md transition-shadow">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3">
@@ -304,14 +341,8 @@ export function About() {
                           <h4 className="font-semibold">{lang.name}</h4>
                           <Badge variant="outline">{lang.level}</Badge>
                         </div>
-                        {lang.proficiency && (
-                          <p className="text-sm text-muted-foreground">{lang.proficiency}</p>
-                        )}
-                        {lang.breakdown && (
-                          <p className="text-xs text-muted-foreground font-medium">
-                            {lang.breakdown}
-                          </p>
-                        )}
+                        {lang.proficiency && <p className="text-sm text-muted-foreground">{lang.proficiency}</p>}
+                        {lang.breakdown && <p className="text-xs text-muted-foreground font-medium">{lang.breakdown}</p>}
                       </div>
                     ))}
                   </div>
@@ -334,7 +365,7 @@ export function About() {
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button asChild>
                   <Link href="/contact">
-                    Let's Connect
+                    Let&apos;s Connect
                     <ExternalLink className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
