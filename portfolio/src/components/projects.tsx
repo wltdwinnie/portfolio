@@ -72,6 +72,7 @@ export function Projects() {
 
   return (
     <section className="container mx-auto px-4 py-16">
+      {/* Header */}
       <div className="text-center mb-12">
         <div className="inline-flex items-center justify-center p-2 bg-primary/10 rounded-full mb-4">
           <Code className="h-8 w-8 text-primary" />
@@ -82,6 +83,7 @@ export function Projects() {
         </p>
       </div>
 
+      {/* Search + Domain Filter */}
       <div className="mb-8 space-y-4">
         <div className="flex flex-col md:flex-row gap-4 items-center justify-between max-w-4xl mx-auto">
           <div className="relative w-full md:w-96">
@@ -111,6 +113,7 @@ export function Projects() {
         </div>
       </div>
 
+      {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-4xl mx-auto">
         <Card className="text-center p-4 hover:shadow-md transition-shadow">
           <div className="flex justify-center mb-2">
@@ -142,6 +145,7 @@ export function Projects() {
         </Card>
       </div>
 
+      {/* Tabs by Type */}
       <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as any)} className="w-full">
         <TabsList className="grid w-full grid-cols-3 mb-8">
           <TabsTrigger value="all">All</TabsTrigger>
@@ -164,6 +168,7 @@ export function Projects() {
                 const conf = typeConfig[project.type as keyof typeof typeConfig];
                 const Icon = conf?.icon || Code;
                 const cats: string[] = project.categories || [];
+
                 return (
                   <Card
                     key={`${project.title}-${i}`}
@@ -177,7 +182,9 @@ export function Projects() {
                           <Icon className={`h-6 w-6 ${conf?.color || "text-primary"}`} />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">{project.title}</CardTitle>
+                          <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
+                            {project.title}
+                          </CardTitle>
                           <div className="flex flex-wrap items-center gap-2 mb-3">
                             <Badge variant="outline" className={`text-xs ${conf?.badgeColor}`}>{project.type}</Badge>
                             {cats.map((c) => (
@@ -193,6 +200,7 @@ export function Projects() {
                         </div>
                       </div>
                     </CardHeader>
+
                     <CardContent className="space-y-6">
                       <CardDescription className="text-base leading-relaxed">{project.description}</CardDescription>
 
@@ -248,7 +256,11 @@ export function Projects() {
                           <h4 className="text-sm font-semibold text-muted-foreground">Technologies Used:</h4>
                           <div className="flex flex-wrap gap-2">
                             {project.tags.map((t: string) => (
-                              <Badge key={t} variant="secondary" className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors cursor-default">
+                              <Badge
+                                key={t}
+                                variant="secondary"
+                                className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+                              >
                                 {t}
                               </Badge>
                             ))}
@@ -290,14 +302,19 @@ export function Projects() {
                               </a>
                             </Button>
                           )}
-                          {project.links.portfolio && (
-                            <Button size="sm" variant="outline" asChild>
-                              <a href={project.links.portfolio} target="_blank" rel="noopener noreferrer">
-                                <ExternalLink className="h-3 w-3 mr-2" />
-                                Portfolio
-                              </a>
-                            </Button>
-                          )}
+
+                          {/* Safe Portfolio button (optional key) */}
+                          {"links" in project &&
+                            project.links &&
+                            "portfolio" in project.links &&
+                            typeof (project.links as any).portfolio === "string" && (
+                              <Button size="sm" variant="outline" asChild>
+                                <a href={(project.links as any).portfolio} target="_blank" rel="noopener noreferrer">
+                                  <ExternalLink className="h-3 w-3 mr-2" />
+                                  Portfolio
+                                </a>
+                              </Button>
+                            )}
                         </div>
                       )}
                     </CardContent>
@@ -309,6 +326,7 @@ export function Projects() {
         </TabsContent>
       </Tabs>
 
+      {/* Call to Action */}
       <div className="mt-16 text-center">
         <Card className="max-w-3xl mx-auto">
           <CardContent className="pt-8">

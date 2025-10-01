@@ -6,7 +6,7 @@ export const siteConfig = {
   tagline: "Passionate about coding, creativity, and making positive impact through technology.",
   location: "Singapore",
   email: "winleithawdar2005@gmail.com",
-  phone: "+95 9 975 545 660",
+  phone: "+65 85466697",
 
   links: {
     github: "https://github.com/wltdwinnie",
@@ -65,7 +65,6 @@ export const siteConfig = {
     },
   ],
 
-  // Experience supports grouped organizations (roles[]) and single-role entries
   experience: [
     {
       role: "Data Quality Assurance Student Assistant",
@@ -85,61 +84,54 @@ export const siteConfig = {
     },
 
     {
-      organization: "SMU AI (SMUAI)",
+      role: "Marketing Lead",
+      organization: "SMU Artificial Intelligence Club (SMUAI)",
       orgLink: "https://www.linkedin.com/company/smuai/",
       logo: "/logos/smuai.png",
-      location: "Singapore",
+      period: "Jun 2025 - Present",
       type: "Student Club Leadership",
-      period: "2025 - Present",
-      roles: [
-        {
-          title: "Marketing Lead",
-          period: "2025 - Present",
-          achievements: [
-            "Owned marketing strategy, content calendar, and event campaigns",
-            "Grew awareness via multi-channel content and partnerships",
-            "Streamlined creative workflow and brand consistency",
-          ],
-        },
+      location: "Singapore",
+      achievements: [
+        "Owned marketing strategy, content calendar, and event campaigns",
+        "Grew awareness via multi-channel content and partnerships",
+        "Streamlined creative workflow and brand consistency",
       ],
+      description:
+        "Leading marketing strategy and content for SMUAI initiatives and events.",
     },
+
     {
+      role: "HGS (Executive)",
       organization: "SMU Myanmar Community",
       orgLink: "https://www.linkedin.com/company/smu-myanmar-community/",
       logo: "/logos/smu-myanmar-community.png",
-      location: "Singapore",
+      period: "Nov 2024 - Present",
       type: "Student Club Executive",
-      period: "2025 - Present",
-      roles: [
-        {
-          title: "HGS (Executive)",
-          period: "2025 - Present",
-          achievements: [
-            "Led planning and operations for community activities",
-            "Coordinated resources and communications across committees",
-            "Established simple SOPs for reliable delivery",
-          ],
-        },
+      location: "Singapore",
+      achievements: [
+        "Led planning and operations for community activities",
+        "Coordinated resources and communications across committees",
+        "Established simple SOPs for reliable delivery",
       ],
+      description:
+        "Executive committee responsibilities for community operations and engagement.",
     },
+
     {
+      role: "Marketing Executive",
       organization: "SMU Ellipsis",
       orgLink: "https://www.linkedin.com/company/smu-ellipsis/",
       logo: "/logos/ellipsis.png",
+      period: "Nov 2024 - Present",
+      type: "Student Club Executive",
       location: "Singapore",
-      type: "Student Club Marketing",
-      period: "2025 - Present",
-      roles: [
-        {
-          title: "Marketing Executive",
-          period: "2025 - Present",
-          achievements: [
-            "Executed campaigns for Ellipsis initiatives and Tech Series",
-            "Produced on-brand assets and streamlined approvals",
-            "Collaborated with speakers and partner clubs on content",
-          ],
-        },
+      achievements: [
+        "Executed campaigns for Ellipsis initiatives and Tech Series",
+        "Produced on-brand assets and streamlined approvals",
+        "Collaborated with speakers and partner clubs on content",
       ],
+      description:
+        "Marketing execution for Ellipsis initiatives and Tech Series activities.",
     },
 
     {
@@ -152,13 +144,7 @@ export const siteConfig = {
       roles: [
         {
           title: "Operations Director",
-      period: "Sep 2023 - Apr 2024",
-      period: "Sep 2023 - Apr 2024",
-      type: "Volunteer Leadership",
-      location: "Myanmar",
           period: "Sep 2023 - Apr 2024",
-      type: "Volunteer Leadership",
-      location: "Myanmar",
           achievements: [
             "Implemented SOPs, runbooks, and reporting cadence to streamline multi-program delivery",
             "Aligned stakeholders and budgets; enforced QA checkpoints and retrospectives",
@@ -220,7 +206,7 @@ export const siteConfig = {
       description:
         "Produced brand-consistent digital assets that resonated with audiences across campaigns and channels.",
     },
-
+  
     {
       role: "Curriculum Development Team Member",
       organization: "Thate Pan Hub",
@@ -237,7 +223,7 @@ export const siteConfig = {
       description:
         "Contributed to CS education by improving curricula and delivering hands-on programming workshops.",
     },
-  ],
+  ],  
 
   activities: [
     {
@@ -255,16 +241,18 @@ export const siteConfig = {
       period: "Feb - Jun 2023",
       location: "Royal Academic Institute, Myanmar",
       skills: ["Critical Thinking", "Mathematical Problem-Solving", "Analytical Reasoning", "Teamwork"],
-      description: "Participated in advanced mathematics discussions and problem-solving sessions, developing strong analytical and critical thinking capabilities."
+      description:
+        "Participated in advanced mathematics discussions and problem-solving sessions, developing strong analytical and critical thinking capabilities.",
     },
     {
-      name: "KAI Arts & Crafts Club", 
+      name: "KAI Arts & Crafts Club",
       role: "Active Member",
       period: "Feb - Jun 2023",
-      location: "Royal Academic Institute, Myanmar", 
+      location: "Royal Academic Institute, Myanmar",
       skills: ["Creativity", "Portfolio Development", "Art Critique", "Visual Communication"],
-      description: "Engaged in various artistic projects and portfolio development, enhancing creative expression and visual communication skills."
-    }
+      description:
+        "Engaged in various artistic projects and portfolio development, enhancing creative expression and visual communication skills.",
+    },
   ],
 
   languages: [

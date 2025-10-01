@@ -9,15 +9,12 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import {
-  GraduationCap,
-  Briefcase,
   Users,
   Award,
   Code,
   Globe,
   Calendar,
   MapPin,
-  CheckCircle,
   ExternalLink,
   ArrowRight,
   Linkedin,
