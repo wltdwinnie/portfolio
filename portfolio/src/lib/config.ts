@@ -37,7 +37,7 @@ export const siteConfig = {
     {
       institution: "Singapore Management University",
       degree: "BSc Computer Science",
-      period: "2024 - Present",
+      period: "Aug 2024 - Present",
       scholarship: "ASEAN Undergraduate Scholarship",
       status: "Current",
       logo: "/logos/smu.png",
@@ -48,20 +48,20 @@ export const siteConfig = {
     {
       institution: "Royal Academic Institute, KAI Global School",
       degree: "Ontario Secondary School Diploma (OSSD)",
-      period: "2023",
+      period: "Dec 2022 - Dec 2023",
       grade: "93% Overall",
       logo: "/logos/rai.png",
       schoolLink: "https://kaiglobalschool.com/",
-      description: "Completed high school with exceptional academic performance across multiple subjects.",
+      description: "Completed high school with excellent academic performance across multiple subjects.",
     },
     {
       institution: "IIP International School",
       degree: "International General Certificate for Secondary Education (IGCSE)",
-      period: "2022",
+      period: "Jul 2021 - Nov 2022",
       grade: "7A*",
       logo: "/logos/iip.png",
       schoolLink: "https://iip-website.vercel.app/",
-      description: "Completed secondary education with exceptional academic performance across multiple subjects.",
+      description: "Completed secondary education with excellent academic performance across multiple subjects.",
     },
   ],
 
@@ -227,6 +227,36 @@ export const siteConfig = {
 
   activities: [
     {
+      name: "MISCA Virtual Fair",
+      role: "AMA Panelist",
+      period: "Sep 2025",
+      location: "Virtual",
+      skills: ["Public Speaking", "Community Engagement", "University Representation"],
+      description:
+        "Invited by SMU Admissions Office to share SMU journey and experiences in an Ask Me Anything session for prospective international students.",
+    },
+    {
+      name: "SMU Full Scholarship Experience Sharing Session",
+      role: "Panelist",
+      period: "Mar 2025",
+      location: "Virtual by Crown Education, Myanmar",
+      skills: ["Public Speaking", "Mentorship", "Educational Guidance"],
+      description:
+        "Shared SMU scholarship experience and undergraduate journey with students and parents aiming for Singapore universities. Session recorded and published for wider reach.",
+      links: {
+        video: "https://www.youtube.com/watch?v=xXI0WyPgOag&t=3029s",
+      },
+    },
+    {
+      name: "Academic Compass: OSSD Pathway",
+      role: "Speaker",
+      period: "Jul 2024",
+      location: "Virtual by The Forward Society, Myanmar",
+      skills: ["Public Speaking", "Educational Guidance", "Program Advocacy"],
+      description:
+        "Delivered information session sharing personal experience and insights about the Ontario Secondary School Diploma (OSSD) program pathway to prospective students.",
+    },
+    {
       name: "ASEAN Soft Power Camp",
       role: "Participant",
       period: "Jun 2024",
@@ -234,6 +264,15 @@ export const siteConfig = {
       skills: ["Cross-cultural communication", "Cultural diplomacy", "Creative storytelling"],
       description:
         "Collaborated with regional peers on cultural diplomacy, creative economy, and nation-branding challenges through hands-on workshops and prototyping.",
+    },
+    {
+      name: "Dream Big, Study Abroad Workshop",
+      role: "Emcee",
+      period: "Sep 2023",
+      location: "Virtual by Here Youths, Myanmar",
+      skills: ["Public Speaking", "Event Management", "Teamwork", "Communication"],
+      description:
+        "Ensured smooth flow of large-scale workshop with hundreds of participants where international students shared study abroad experiences, scholarship opportunities, and university life. Managed event planning, maintained participant engagement, and coordinated speakers and audiences.",
     },
     {
       name: "KAI Math Club",
@@ -252,6 +291,15 @@ export const siteConfig = {
       skills: ["Creativity", "Portfolio Development", "Art Critique", "Visual Communication"],
       description:
         "Engaged in various artistic projects and portfolio development, enhancing creative expression and visual communication skills.",
+    },
+    {
+      name: "Leadership and Personal Growth Movement",
+      role: "Leadership Roundtable Participant",
+      period: "Dec 2022",
+      location: "Beyond Success",
+      skills: ["Leadership Development", "Personal Growth", "Strategic Thinking"],
+      description:
+        "Participated in leadership roundtable focused on developing leadership capabilities and personal growth strategies.",
     },
   ],
 
@@ -321,6 +369,20 @@ export const siteConfig = {
       highlights: ["Verified listings and chat", "Deployed on Vercel with server routes"],
     },
     {
+      title: "Ellipsis Tech Series 2025 Website Design",
+      type: "Personal Project",
+      categories: ["Personal", "Creative"],
+      date: "2025-03-20",
+      year: "2025",
+      description:
+        "Individual Figma prototype for the Ellipsis Tech Series website; focused on information hierarchy, mobile flows, and interaction details.",
+      tags: ["Figma", "UI Design", "Prototyping", "Design Systems"],
+      links: {
+        figma: "https://www.figma.com/proto/c42XGP3OMQg2khmDPJDH6N/Tech-Series-2025-Website-Redesign",
+      },
+      highlights: ["Modular component-based design", "Responsive mobile-first flows", "Clear navigation and event discovery"],
+    },
+    {
       title: "SMU Nest",
       type: "Team Project",
       categories: ["Team", "Creative"],
@@ -335,5 +397,49 @@ export const siteConfig = {
       collaborators: ["Ho Xin Yu", "Htet Shwe Win Than", "Kaitlin Gardner", "Sierra Colvin", "Win Lei Thawdar"],
       highlights: ["Student-specific filters", "Research-driven flows and clear information design"],
     },
-  ],
+    {
+      title: "AfterClass UI Competition",
+      type: "Team Project",
+      categories: ["Team", "Creative"],
+      date: "2025-02-28",
+      year: "2025",
+      description:
+        "Module submission emphasizing clean layout systems and user-centric flows across screens and states.",
+      tags: ["Figma", "UI Design", "Component Design"],
+      links: {
+        figma: "https://www.figma.com/proto/x1234example/AfterClass-UI",
+      },
+      collaborators: ["Tai Wei Sin, Htet Shwe Win Than, Win Lei Thawdar"],
+      highlights: ["Clean layout systems", "User-centric flows", "Multiple screen states and interactions"],
+    },
+    {
+      title: "Parade Card Game",
+      type: "Team Project",
+      categories: ["Team", "Tech"],
+      date: "2025-02-10",
+      year: "2025",
+      description:
+        "Java implementation with Human vs AI and multiplayer architecture; includes scoring, hints, and undo features.",
+      tags: ["Java", "Object-Oriented Programming", "Game Logic", "AI"],
+      links: {
+        github: "https://github.com/wltdwinnie/ParadeCardGame",
+      },
+      collaborators: ["Aum Jiwoo, Brandon Boo, Chua Qihan, Darrius Ng, Rayner Sim, Win Lei Thawdar"],
+      highlights: ["Human vs AI gameplay", "Multiplayer support", "Hint system and undo functionality"],
+    },
+    {
+      title: "Graphic Design Portfolio",
+      type: "Personal Project",
+      categories: ["Personal", "Creative"],
+      date: "2024-02-01",
+      year: "2024",
+      description:
+        "Curated collection of brand identities, social media graphics, event materials, and artwork showcasing consistent visual systems.",
+      tags: ["Adobe Photoshop", "Illustrator", "Branding", "Social Media", "Layout Design"],
+      links: {
+        portfolio: "https://www.canva.com/design/DAGuor6sXg4/u4ZjrrmetCGemY4mpusWUg/view",
+      },
+      highlights: ["Brand identity design", "Event materials and print assets", "Social media content creation"],
+    },
+  ],  
 };

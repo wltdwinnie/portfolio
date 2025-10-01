@@ -269,6 +269,18 @@ export function About() {
                       </div>
                     </div>
                   )}
+                  {activity.links && Object.keys(activity.links).length > 0 && (
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {activity.links.video && (
+                        <Button size="sm" variant="outline" asChild>
+                          <a href={activity.links.video} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="h-3 w-3 mr-2" />
+                            Watch Recording
+                          </a>
+                        </Button>
+                      )}
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             ))}
