@@ -75,9 +75,9 @@ export const siteConfig = {
       type: "Student Assistant",
       location: "Singapore",
       achievements: [
-        "Authored culturally grounded prompt–response pairs across 9 SEA languages",
-        "Verified reliability and accuracy via cross-checks and qualitative evaluations",
-        "Proposed guideline improvements to raise data quality and coverage balance",
+        "Created quality prompt-response pairs to authentically represent cultural practices from Myanmar",
+        "Evaluated dataset reliability, validity, and accuracy; verified content by cross-checking reputable sources and references",
+        "Performed human qualitative evaluation of LLM outputs; flagged hallucinations and bias risks; recommended corrective prompts",
       ],
       description:
         "Supported end-to-end data quality workflows with multilingual coverage and rigorous evaluation of LLM outputs.",
@@ -92,7 +92,7 @@ export const siteConfig = {
       type: "Student Club Leadership",
       location: "Singapore",
       achievements: [
-        "Owned marketing strategy, content calendar, and event campaigns",
+        "Authored marketing handbook with guidelines specific to SMUAI Marketing",
         "Grew awareness via multi-channel content and partnerships",
         "Streamlined creative workflow and brand consistency",
       ],
@@ -106,12 +106,12 @@ export const siteConfig = {
       orgLink: "https://www.linkedin.com/company/smu-myanmar-community/",
       logo: "/logos/smu-myanmar-community.png",
       period: "Nov 2024 - Present",
-      type: "Student Club Executive",
+      type: "Student Club Leadership",
       location: "Singapore",
       achievements: [
-        "Led planning and operations for community activities",
-        "Coordinated resources and communications across committees",
-        "Established simple SOPs for reliable delivery",
+        "Led planning and operations for SMUMC's administrative matters",
+        "Coordinated resources and communications within the club and across cultural clubs",
+        "Created simple templates for reliable delivery of information",
       ],
       description:
         "Executive committee responsibilities for community operations and engagement.",
@@ -126,9 +126,9 @@ export const siteConfig = {
       type: "Student Club Executive",
       location: "Singapore",
       achievements: [
-        "Executed campaigns for Ellipsis initiatives and Tech Series",
+        "Executed marketing collaterals for Ellipsis initiatives",
         "Produced on-brand assets and streamlined approvals",
-        "Collaborated with speakers and partner clubs on content",
+        "Collaborated with other departments on content and design creation",
       ],
       description:
         "Marketing execution for Ellipsis initiatives and Tech Series activities.",
@@ -216,7 +216,7 @@ export const siteConfig = {
       type: "Education Volunteer",
       location: "Yangon, Myanmar · Hybrid",
       achievements: [
-        "Analyzed and enhanced CS curriculum; authored lesson plans and assessments",
+        "Analyzed and enhanced CS curriculum; assited editing lesson plans and assessments",
         "Delivered Hour of Code 2023; facilitated first-time programming sessions",
         "Iterated content based on classroom feedback and outcomes",
       ],
@@ -242,7 +242,7 @@ export const siteConfig = {
       location: "Royal Academic Institute, Myanmar",
       skills: ["Critical Thinking", "Mathematical Problem-Solving", "Analytical Reasoning", "Teamwork"],
       description:
-        "Participated in advanced mathematics discussions and problem-solving sessions, developing strong analytical and critical thinking capabilities.",
+        "Participated in mathematics discussions and problem-solving sessions, developing analytical and critical thinking capabilities.",
     },
     {
       name: "KAI Arts & Crafts Club",
@@ -265,7 +265,7 @@ export const siteConfig = {
       name: "English",
       level: "Professional (IELTS 7.5)",
       breakdown: "Reading: 8, Listening: 7.5, Speaking: 7, Writing: 6.5",
-      proficiency: "Advanced professional proficiency across all skills",
+      proficiency: "Advanced proficiency across all skills",
     },
   ],
 
