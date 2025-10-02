@@ -378,7 +378,7 @@ export const siteConfig = {
         "Individual Figma prototype for the Ellipsis Tech Series website; focused on information hierarchy, mobile flows, and interaction details.",
       tags: ["Figma", "UI Design", "Prototyping", "Design Systems"],
       links: {
-        figma: "https://www.figma.com/proto/c42XGP3OMQg2khmDPJDH6N/Tech-Series-2025-Website-Redesign",
+        figma: "https://www.figma.com/proto/B8xQeuv59qQjf3CX5nNfwm/TechSeries2025?node-id=0-1&t=2LwEM4QBOwiweyFx-1",
       },
       highlights: ["Modular component-based design", "Responsive mobile-first flows", "Clear navigation and event discovery"],
     },
@@ -407,7 +407,7 @@ export const siteConfig = {
         "Module submission emphasizing clean layout systems and user-centric flows across screens and states.",
       tags: ["Figma", "UI Design", "Component Design"],
       links: {
-        figma: "https://www.figma.com/proto/x1234example/AfterClass-UI",
+        figma: "https://www.figma.com/proto/rs7VSsfqqxucYFZWeYvjTW/-UI-Cubed--AfterClass-Design-Submission?node-id=3581-6207&starting-point-node-id=3581%3A6207&t=BgiVjv9y2I6nGDQp-1",
       },
       collaborators: ["Tai Wei Sin, Htet Shwe Win Than, Win Lei Thawdar"],
       highlights: ["Clean layout systems", "User-centric flows", "Multiple screen states and interactions"],
