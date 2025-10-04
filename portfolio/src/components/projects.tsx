@@ -51,7 +51,9 @@ export function Projects() {
 
   const totalProjects = siteConfig.projects.length;
   const teamProjects = siteConfig.projects.filter((p) => p.type === "Team Project").length;
-  const hasTop10 = siteConfig.projects.some((p) => (p.achievements || []).some((a: string) => a.toLowerCase().includes("top 10")));
+  const hasTop10 = siteConfig.projects.some((p) =>
+    (p.achievements || []).some((a: string) => a.toLowerCase().includes("top 10"))
+  );
 
   const projectsToRender = useMemo(() => {
     const q = searchTerm.trim().toLowerCase();
@@ -73,12 +75,12 @@ export function Projects() {
   return (
     <section className="container mx-auto px-4 py-16">
       {/* Header */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-10">
         <div className="inline-flex items-center justify-center p-2 bg-primary/10 rounded-full mb-4">
           <Code className="h-8 w-8 text-primary" />
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Projects & Work</h1>
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">Projects & Work</h1>
+        <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
           A curated list of personal and team work across tech, creative, and leadership domains.
         </p>
       </div>
@@ -95,12 +97,12 @@ export function Projects() {
               className="pl-10"
             />
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 w-full md:w-auto">
             <Filter className="h-4 w-4 text-muted-foreground" />
             <select
               value={selectedDomain}
               onChange={(e) => setSelectedDomain(e.target.value as Domain)}
-              className="bg-background border border-input rounded-md px-3 py-2 text-sm"
+              className="bg-background border border-input rounded-md px-3 py-2 text-sm w-full md:w-auto"
             >
               <option value="all">All Domains</option>
               {domainOptions.map((d) => (
@@ -113,30 +115,30 @@ export function Projects() {
         </div>
       </div>
 
-      {/* Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-4xl mx-auto">
-        <Card className="text-center p-4 hover:shadow-md transition-shadow">
+      {/* Stats (compact on mobile) */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-10 max-w-4xl mx-auto">
+        <Card className="text-center p-4">
           <div className="flex justify-center mb-2">
             <Trophy className="h-6 w-6 text-primary" />
           </div>
           <p className="text-2xl font-bold text-primary">{totalProjects}</p>
           <p className="text-sm text-muted-foreground">Total Projects</p>
         </Card>
-        <Card className="text-center p-4 hover:shadow-md transition-shadow">
+        <Card className="text-center p-4">
           <div className="flex justify-center mb-2">
             <Users className="h-6 w-6 text-primary" />
           </div>
           <p className="text-2xl font-bold text-primary">{teamProjects}</p>
           <p className="text-sm text-muted-foreground">Team Projects</p>
         </Card>
-        <Card className="text-center p-4 hover:shadow-md transition-shadow">
+        <Card className="text-center p-4">
           <div className="flex justify-center mb-2">
             <Award className="h-6 w-6 text-primary" />
           </div>
           <p className="text-2xl font-bold text-primary">{hasTop10 ? "Top 10" : "—"}</p>
           <p className="text-sm text-muted-foreground">Hackathon Result</p>
         </Card>
-        <Card className="text-center p-4 hover:shadow-md transition-shadow">
+        <Card className="text-center p-4">
           <div className="flex justify-center mb-2">
             <Target className="h-6 w-6 text-primary" />
           </div>
@@ -153,7 +155,7 @@ export function Projects() {
           <TabsTrigger value="Personal Project">Personal</TabsTrigger>
         </TabsList>
 
-        <TabsContent value={activeTab} className="mt-8">
+        <TabsContent value={activeTab} className="mt-6">
           {projectsToRender.length === 0 ? (
             <Card className="text-center p-8">
               <CardContent>
@@ -163,7 +165,7 @@ export function Projects() {
               </CardContent>
             </Card>
           ) : (
-            <div className="grid gap-8 md:grid-cols-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               {projectsToRender.map((project, i) => {
                 const conf = typeConfig[project.type as keyof typeof typeConfig];
                 const Icon = conf?.icon || Code;
@@ -172,23 +174,27 @@ export function Projects() {
                 return (
                   <Card
                     key={`${project.title}-${i}`}
-                    className={`group hover:shadow-lg transition-all duration-300 border-l-4 ${
+                    className={`group transition-all duration-300 border-l-4 ${
                       conf?.borderColor || "border-l-primary"
-                    } hover:scale-[1.02]`}
+                    } md:hover:shadow-lg md:hover:scale-[1.02]`}
                   >
-                    <CardHeader className="space-y-4">
+                    <CardHeader className="space-y-4 p-4 sm:p-6">
                       <div className="flex items-start gap-4">
-                        <div className={`p-3 rounded-xl ${conf?.bgColor || "bg-muted"} group-hover:scale-110 transition-transform duration-300`}>
+                        <div
+                          className={`p-3 rounded-xl ${conf?.bgColor || "bg-muted"} transition-transform duration-300 md:group-hover:scale-110`}
+                        >
                           <Icon className={`h-6 w-6 ${conf?.color || "text-primary"}`} />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
+                          <CardTitle className="text-lg sm:text-xl mb-2 md:group-hover:text-primary transition-colors">
                             {project.title}
                           </CardTitle>
-                          <div className="flex flex-wrap items-center gap-2 mb-3">
-                            <Badge variant="outline" className={`text-xs ${conf?.badgeColor}`}>{project.type}</Badge>
+                          <div className="flex flex-wrap items-center gap-2 mb-2">
+                            <Badge variant="outline" className={`text-xs ${conf?.badgeColor}`}>
+                              {project.type}
+                            </Badge>
                             {cats.map((c) => (
-                              <Badge key={c} variant="secondary" className="text-xs">
+                              <Badge key={c} variant="secondary" className="text-xs max-w-[10ch] truncate">
                                 {c}
                               </Badge>
                             ))}
@@ -201,10 +207,10 @@ export function Projects() {
                       </div>
                     </CardHeader>
 
-                    <CardContent className="space-y-6">
+                    <CardContent className="space-y-5 p-4 sm:p-6">
                       <CardDescription className="text-base leading-relaxed">{project.description}</CardDescription>
 
-                      {project.collaborators && project.collaborators.length > 0 && (
+                      {project.collaborators?.length ? (
                         <div className="space-y-2">
                           <p className="text-sm font-semibold text-muted-foreground">Team Members:</p>
                           <div className="flex flex-wrap gap-1">
@@ -215,9 +221,9 @@ export function Projects() {
                             ))}
                           </div>
                         </div>
-                      )}
+                      ) : null}
 
-                      {project.achievements && project.achievements.length > 0 && (
+                      {project.achievements?.length ? (
                         <div className="space-y-3">
                           <h4 className="text-sm font-semibold text-muted-foreground flex items-center gap-2">
                             <Trophy className="h-4 w-4" />
@@ -232,9 +238,9 @@ export function Projects() {
                             ))}
                           </div>
                         </div>
-                      )}
+                      ) : null}
 
-                      {project.highlights && project.highlights.length > 0 && (
+                      {project.highlights?.length ? (
                         <div className="space-y-3">
                           <h4 className="text-sm font-semibold text-muted-foreground flex items-center gap-2">
                             <Award className="h-4 w-4" />
@@ -249,9 +255,9 @@ export function Projects() {
                             ))}
                           </div>
                         </div>
-                      )}
+                      ) : null}
 
-                      {project.tags && project.tags.length > 0 && (
+                      {project.tags?.length ? (
                         <div className="space-y-3">
                           <h4 className="text-sm font-semibold text-muted-foreground">Technologies Used:</h4>
                           <div className="flex flex-wrap gap-2">
@@ -259,64 +265,72 @@ export function Projects() {
                               <Badge
                                 key={t}
                                 variant="secondary"
-                                className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+                                className="text-xs max-w-[12ch] truncate hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
                               >
                                 {t}
                               </Badge>
                             ))}
                           </div>
                         </div>
-                      )}
+                      ) : null}
 
-                      {project.links && Object.keys(project.links).length > 0 && (
-                        <div className="flex flex-wrap gap-2 pt-2">
+                      {project.links && Object.keys(project.links).length > 0 ? (
+                        <div className="flex gap-2 pt-1 -mx-1 overflow-x-auto">
                           {project.links.live && (
-                            <Button size="sm" variant="default" asChild>
-                              <a href={project.links.live} target="_blank" rel="noopener noreferrer">
-                                <ExternalLink className="h-3 w-3 mr-2" />
-                                Live Demo
-                              </a>
-                            </Button>
+                            <div className="shrink-0 px-1">
+                              <Button size="sm" variant="default" asChild className="min-h-[36px]">
+                                <a href={project.links.live} target="_blank" rel="noopener noreferrer">
+                                  <ExternalLink className="h-3 w-3 mr-2" />
+                                  Live Demo
+                                </a>
+                              </Button>
+                            </div>
                           )}
                           {project.links.video && (
-                            <Button size="sm" variant="outline" asChild>
-                              <a href={project.links.video} target="_blank" rel="noopener noreferrer">
-                                <ExternalLink className="h-3 w-3 mr-2" />
-                                Demo Video
-                              </a>
-                            </Button>
+                            <div className="shrink-0 px-1">
+                              <Button size="sm" variant="outline" asChild className="min-h-[36px]">
+                                <a href={project.links.video} target="_blank" rel="noopener noreferrer">
+                                  <ExternalLink className="h-3 w-3 mr-2" />
+                                  Demo Video
+                                </a>
+                              </Button>
+                            </div>
                           )}
                           {project.links.github && (
-                            <Button size="sm" variant="outline" asChild>
-                              <a href={project.links.github} target="_blank" rel="noopener noreferrer">
-                                <Github className="h-3 w-3 mr-2" />
-                                Source Code
-                              </a>
-                            </Button>
+                            <div className="shrink-0 px-1">
+                              <Button size="sm" variant="outline" asChild className="min-h-[36px]">
+                                <a href={project.links.github} target="_blank" rel="noopener noreferrer">
+                                  <Github className="h-3 w-3 mr-2" />
+                                  Source Code
+                                </a>
+                              </Button>
+                            </div>
                           )}
                           {project.links.figma && (
-                            <Button size="sm" variant="outline" asChild>
-                              <a href={project.links.figma} target="_blank" rel="noopener noreferrer">
-                                <ExternalLink className="h-3 w-3 mr-2" />
-                                Figma
-                              </a>
-                            </Button>
+                            <div className="shrink-0 px-1">
+                              <Button size="sm" variant="outline" asChild className="min-h-[36px]">
+                                <a href={project.links.figma} target="_blank" rel="noopener noreferrer">
+                                  <ExternalLink className="h-3 w-3 mr-2" />
+                                  Figma
+                                </a>
+                              </Button>
+                            </div>
                           )}
-
-                          {/* Safe Portfolio button (optional key) */}
                           {"links" in project &&
                             project.links &&
                             "portfolio" in project.links &&
                             typeof (project.links as any).portfolio === "string" && (
-                              <Button size="sm" variant="outline" asChild>
-                                <a href={(project.links as any).portfolio} target="_blank" rel="noopener noreferrer">
-                                  <ExternalLink className="h-3 w-3 mr-2" />
-                                  Portfolio
-                                </a>
-                              </Button>
+                              <div className="shrink-0 px-1">
+                                <Button size="sm" variant="outline" asChild className="min-h-[36px]">
+                                  <a href={(project.links as any).portfolio} target="_blank" rel="noopener noreferrer">
+                                    <ExternalLink className="h-3 w-3 mr-2" />
+                                    Portfolio
+                                  </a>
+                                </Button>
+                              </div>
                             )}
                         </div>
-                      )}
+                      ) : null}
                     </CardContent>
                   </Card>
                 );

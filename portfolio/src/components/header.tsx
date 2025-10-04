@@ -86,18 +86,18 @@ export function Header() {
             
             {/* Theme Toggle */}
             {mounted && (
-              <Button
-                variant="ghost"
-                size="sm"
+              <button
+                type="button"
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 aria-label="Toggle theme"
-                className="h-8 w-8 p-0"
+                className="h-8 w-8 inline-flex items-center justify-center rounded-md border bg-background hover:bg-muted text-foreground transition-colors outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
               >
-                {theme === "dark" ? 
-                  <Sun className="h-4 w-4" /> : 
+                {theme === "dark" ? (
+                  <Sun className="h-4 w-4" />
+                ) : (
                   <Moon className="h-4 w-4" />
-                }
-              </Button>
+                )}
+              </button>
             )}
             
             {/* Mobile Menu Button */}

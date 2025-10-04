@@ -227,6 +227,15 @@ export const siteConfig = {
 
   activities: [
     {
+      name: "The 12th Lee Kuan Yew Global Business Plan Competition (LKYGBPC)",
+      role: "Student Ambassador",
+      period: "Oct 2025",
+      location: "SMU, Singapore",
+      skills: ["Event Operations", "VIP Protocol"],
+      description:
+        "Supported Grand Finals Week operations as a student ambassador, including VIP ushering and startup liaison"
+    },
+    {
       name: "MISCA Virtual Fair",
       role: "AMA Panelist",
       period: "Sep 2025",
