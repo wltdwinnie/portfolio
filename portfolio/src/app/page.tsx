@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
 import { siteConfig } from "@/lib/config";
 import Link from "next/link";
 import Image from "next/image";
@@ -59,19 +60,18 @@ export default function Home() {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="text-base px-8 py-3" asChild>
-                <Link href="/about">
-                  About Me
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
+              <InteractiveHoverButton className="rounded-md">
+                  <Link href="/about" className="inline-flex items-center">
+                    About Me
+                  </Link>
+                </InteractiveHoverButton>
               <Button variant="outline" size="lg" className="text-base px-8 py-3" asChild>
                 <Link href="/projects">
                   <Code className="mr-2 h-5 w-5" />
                   View Projects
                 </Link>
               </Button>
-              <Button variant="ghost" size="lg" className="text-base px-8 py-3" asChild>
+              <Button variant="outline" size="lg" className="text-base px-8 py-3" asChild>
                 <Link href="/contact">
                   <Mail className="mr-2 h-5 w-5" />
                   Get In Touch
@@ -81,9 +81,9 @@ export default function Home() {
             
             {/* Download CV */}
             <div className="pt-2">
-              <Button variant="outline" size="sm" asChild>
+              <Button variant="secondary" size="sm" asChild>
                 <a href="/win-lei-thawdar-cv.pdf" target="_blank">
-                  <Download className="mr-2 h-4 w-4" />
+                  <Download className="mr-2 h-5 w-5" />
                   Download CV
                 </a>
               </Button>

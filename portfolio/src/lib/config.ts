@@ -418,7 +418,7 @@ export const siteConfig = {
       links: {
         figma: "https://www.figma.com/proto/rs7VSsfqqxucYFZWeYvjTW/-UI-Cubed--AfterClass-Design-Submission?node-id=3581-6207&starting-point-node-id=3581%3A6207&t=BgiVjv9y2I6nGDQp-1",
       },
-      collaborators: ["Tai Wei Sin, Htet Shwe Win Than, Win Lei Thawdar"],
+      collaborators: ["Tai Wei Sin", "Htet Shwe Win Than", "Win Lei Thawdar"],
       highlights: ["Clean layout systems", "User-centric flows", "Multiple screen states and interactions"],
     },
     {
@@ -433,7 +433,7 @@ export const siteConfig = {
       links: {
         github: "https://github.com/wltdwinnie/ParadeCardGame",
       },
-      collaborators: ["Aum Jiwoo, Brandon Boo, Chua Qihan, Darrius Ng, Rayner Sim, Win Lei Thawdar"],
+      collaborators: ["Aum Jiwoo", "Brandon Boo", "Chua Qihan", "Darrius Ng", "Rayner Sim", "Win Lei Thawdar"],
       highlights: ["Human vs AI gameplay", "Multiplayer support", "Hint system and undo functionality"],
     },
     {

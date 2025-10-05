@@ -104,7 +104,7 @@ export function Footer() {
               © {currentYear} {siteConfig.name}. Built using Next.js & TypeScript.
             </p>
             <p className="text-xs">
-              Last updated: September 2025
+              Last updated: October 2025
             </p>
           </div>
         </div>
