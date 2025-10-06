@@ -1,19 +1,20 @@
+"use client";
+
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { siteConfig } from "@/lib/config";
 import Link from "next/link";
 import Image from "next/image";
 import { 
   MapPin, 
   GraduationCap, 
-  ArrowRight, 
   Code, 
   BookOpen, 
   Users,
   Download,
-  Mail
+  Mail,
 } from "lucide-react";
 
 export default function Home() {
@@ -60,29 +61,32 @@ export default function Home() {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <InteractiveHoverButton className="rounded-md">
-                  <Link href="/about" className="inline-flex items-center">
-                    About Me
-                  </Link>
-                </InteractiveHoverButton>
-              <Button variant="outline" size="lg" className="text-base px-8 py-3" asChild>
+              {/* About Me */}
+              <InteractiveHoverButton className="inline-block w-full sm:w-auto rounded-md px-8 justify-center"> 
+                <Link href="/about" className="flex w-full justify-center items-center text-base rounded-md"> About Me </Link> 
+              </InteractiveHoverButton>
+
+              {/* Projects */}
+              <Button variant="primarySubtle" size="lg" className="text-base px-8 py-3 w-full sm:w-auto justify-center" asChild>
                 <Link href="/projects">
                   <Code className="mr-2 h-5 w-5" />
                   View Projects
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" className="text-base px-8 py-3" asChild>
+
+              {/* Get In Touch */}
+              <Button variant="outline" size="lg" className="text-base px-8 py-3 w-full sm:w-auto justify-center" asChild>
                 <Link href="/contact">
                   <Mail className="mr-2 h-5 w-5" />
                   Get In Touch
                 </Link>
               </Button>
             </div>
-            
+
             {/* Download CV */}
             <div className="pt-2">
-              <Button variant="secondary" size="sm" asChild>
-                <a href="/win-lei-thawdar-cv.pdf" target="_blank">
+              <Button variant="secondary" size="lg" className="text-base px-8 py-3 w-full sm:w-auto justify-center" asChild>
+                <a href="/win-lei-thawdar-cv.pdf" target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-5 w-5" />
                   Download CV
                 </a>
